@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>DuLichTraVinh</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+   <h1 id="title"></h1>
+   <p id="message"></p>
+   <p id="author"></p>
+
+   <script>
+            fetch('data.json')
+               .then(res => res.json())
+               .then(data =>  {
+               document.getElementById("title").textContent = data.title;
+               document.getElementById("message").textContent = data.title;
+               document.getElementById("author").textContent = data.title;
+               })
+   </script>
+
+   <header>
+      <input type="checkbox" name="" id="thanhcuon">
+      <label for="thanhcuon" class="fas fa-bars"></label>
+
+    
+<table cellpadding="5">
+   <tr>
+      <td>
+         <img src="" alt="" width="60">
+      </td>
+      <td>
+         <a href="" class="logo" style="font-size: 20px; font-weight: bold; text-decoration: none; color: black;">BOOK ONLINE</a>
+      </td>
+   </tr>
+</table>
+
+
+     <div class="menu">
+   <a href="#trangchu">Trang Chủ</a>
+
+   <div class="dropdown">
+      <a href="#">Thể loại</a>
+      <div class="dropdown-content">
+         <table>
+            <tr><td><a href="../The_loai/Truyen_ngan/truyenngan.html">Truyện ngắn</a></td>
+            <td><a href="">Ngôn tình</a></td>
+            <td><a href="">Tiểu thuyết</a></td>
+            </tr>
+            <tr>
+               <td><a href="">Cổ tích</a></td>
+               <td><a href="">Truyện 3D</a></td>
+               <td><a href="">Kinh dị</a></td>
+            </tr>
+            <tr>
+               <td><a href="">Hành động & phiêu lưu</a></td>
+              <td><a href="">Lịch sử</a></td>
+              <td><a href="">Tâm lý</a></td>
+            </tr>
+         </table>
+      </div>
+   </div>
+
+   <a href="#Sách điện tử">Sách điện tử</a>
+   <a href="#Mua sắm">Mua sắm</a>
+</div>
+
+      <div class="icons">
+        
+         <a href="#" class="fas fa-user"></a>
+      </div>
+   </header>
+
+   <section class="trangchu" id="trangchu">
+      <div class="gth">
+         <h3>KHÔNG GIAN SÁCH</h3>
+         <p>Chào mừng bạn đến với thế giới của tri thức và tưởng tượng, nơi những trang sách mở ra hành trình không giới hạn!</p>
+         
+      </div>
+   </section>
+</body>
+</html>
+
