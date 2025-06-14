@@ -12,58 +12,7 @@
 </head>
 
 <body>
-  <header>
-    <input type="checkbox" name="" id="thanhcuon">
-    <label for="thanhcuon" class="fas fa-bars"></label>
-
-
-    <table cellpadding="5">
-      <tr>
-        <td>
-          <img src="" alt="" width="60">
-        </td>
-        <td>
-          <a href="" class="logo" style="font-size: 20px; font-weight: bold; text-decoration: none; color: black;">BOOK
-            ONLINE</a>
-        </td>
-      </tr>
-    </table>
-
-
-    <div class="menu">
-      <a href="#trangchu">Trang Chủ</a>
-
-      <div class="dropdown">
-        <a href="#">Thể loại</a>
-        <div class="dropdown-content">
-          <table>
-            <tr>
-              <td><a href="./The_loai/Truyen_ngan/truyenngan.html">Truyện ngắn</a></td>
-              <td><a href="">Ngôn tình</a></td>
-              <td><a href="">Tiểu thuyết</a></td>
-            </tr>
-            <tr>
-              <td><a href="">Cổ tích</a></td>
-              <td><a href="">Truyện 3D</a></td>
-              <td><a href="">Kinh dị</a></td>
-            </tr>
-            <tr>
-              <td><a href="">Hành động & phiêu lưu</a></td>
-              <td><a href="">Lịch sử</a></td>
-              <td><a href="">Tâm lý</a></td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <a href="#Sách điện tử">Sách điện tử</a>
-      <a href="#Mua sắm">Mua sắm</a>
-    </div>
-
-    <div class="icons">
-      <a href="#" class="fas fa-user"></a>
-    </div>
-  </header>
+  <header id="header-placeholder"></header>
 
   <section class="trangchu" id="trangchu">
     <div class="gth-container">
@@ -85,18 +34,20 @@
     </div>
   </section>
   <script>
+    // JavaScript for the book slider
+    // Lấy các phần tử cần thiết
     const track = document.querySelector('.book-track');
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
     let index = 0;
-
+    // eventlistener cho next button
     nextBtn.onclick = () => {
       if (index < track.children.length - 1) {
-        index++;
+        index++; // tăng phần tử slider
         track.style.transform = `translateX(-${index * 100}%)`;
       }
     };
-
+    // eventlistener cho previous button
     prevBtn.onclick = () => {
       if (index > 0) {
         index--;
@@ -109,11 +60,11 @@
 
   <div class="featured-books">
     <div class="book-item">
-      <a href="./doctruyen/Tat_den.html"><img src="./images/tatden.jpg" alt="Sách 1"></a>
+      <a href="./doctruyen/Tat_den.html"><img src="./images/tatden.jpeg" alt="Sách 1"></a>
       <p class="book-title">Tắt đèn</p>
     </div>
     <div class="book-item">
-      <img src="./images/Trong Họa Có Phúc.jpg" alt="Sách 2">
+      <img src="./images/Trong Họa Có Phúc.jpeg" alt="Sách 2">
       <p class="book-title">Trong Họa Có Phúc</p>
     </div>
     <div class="book-item">
@@ -179,5 +130,25 @@
     </div>
   </div>
 </body>
+
+<footer id="footer-placeholder"></footer>
+
+<!-- Load header và footer từ external file -->
+<script>
+  fetch('./Elements/header.html') // đường dẫn đến file header.html
+    .then(response => response.text()) // đổi response sang text để lấy nội dung HTML
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading header:', error)); // xử lý lỗi nếu có
+
+  // Load footer from external file
+  fetch('./Elements/footer.html') // đường dẫn đến file footer.html
+    .then(response => response.text()) // đổi response sang text để lấy nội dung HTML
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading footer:', error)); // xử lý lỗi nếu có
+</script>
 
 </html>

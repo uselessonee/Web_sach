@@ -13,3 +13,4 @@ document.querySelectorAll('input[type="number"]').forEach(inputNumber =>{
         if(inputNumber.value.length > inputNumber.maxLeght) inputNumber.value=inputNumber.value.silce(0, inputNumber.maxLeght);
     };
 });
+
