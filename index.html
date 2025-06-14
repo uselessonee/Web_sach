@@ -1,86 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title> Đọc sách online</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-   <link rel="stylesheet" href="./css/style.css">
-   
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Đọc sách online</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
 </head>
 
 <body>
-   <header>
-      <input type="checkbox" name="" id="thanhcuon">
-      <label for="thanhcuon" class="fas fa-bars"></label>
-
-    
-<table cellpadding="5">
-   <tr>
-      <td>
-         <img src="" alt="" width="60">
-      </td>
-      <td>
-         <a href="" class="logo" style="font-size: 20px; font-weight: bold; text-decoration: none; color: black;">BOOK ONLINE</a>
-      </td>
-   </tr>
-</table>
+  <header>
+    <input type="checkbox" name="" id="thanhcuon">
+    <label for="thanhcuon" class="fas fa-bars"></label>
 
 
-     <div class="menu">
-   <a href="#trangchu">Trang Chủ</a>
+    <table cellpadding="5">
+      <tr>
+        <td>
+          <img src="" alt="" width="60">
+        </td>
+        <td>
+          <a href="" class="logo" style="font-size: 20px; font-weight: bold; text-decoration: none; color: black;">BOOK
+            ONLINE</a>
+        </td>
+      </tr>
+    </table>
 
-   <div class="dropdown">
-      <a href="#">Thể loại</a>
-      <div class="dropdown-content">
-         <table>
-            <tr><td><a href="./The_loai/Truyen_ngan/truyenngan.html">Truyện ngắn</a></td>
-            <td><a href="">Ngôn tình</a></td>
-            <td><a href="">Tiểu thuyết</a></td>
+
+    <div class="menu">
+      <a href="#trangchu">Trang Chủ</a>
+
+      <div class="dropdown">
+        <a href="#">Thể loại</a>
+        <div class="dropdown-content">
+          <table>
+            <tr>
+              <td><a href="./The_loai/Truyen_ngan/truyenngan.html">Truyện ngắn</a></td>
+              <td><a href="">Ngôn tình</a></td>
+              <td><a href="">Tiểu thuyết</a></td>
             </tr>
             <tr>
-               <td><a href="">Cổ tích</a></td>
-               <td><a href="">Truyện 3D</a></td>
-               <td><a href="">Kinh dị</a></td>
+              <td><a href="">Cổ tích</a></td>
+              <td><a href="">Truyện 3D</a></td>
+              <td><a href="">Kinh dị</a></td>
             </tr>
             <tr>
-               <td><a href="">Hành động & phiêu lưu</a></td>
+              <td><a href="">Hành động & phiêu lưu</a></td>
               <td><a href="">Lịch sử</a></td>
               <td><a href="">Tâm lý</a></td>
             </tr>
-         </table>
+          </table>
+        </div>
       </div>
-   </div>
 
-   <a href="#Sách điện tử">Sách điện tử</a>
-   <a href="#Mua sắm">Mua sắm</a>
-   </div>
+      <a href="#Sách điện tử">Sách điện tử</a>
+      <a href="#Mua sắm">Mua sắm</a>
+    </div>
 
     <div class="icons">
-        <a href="#" class="fas fa-user"></a>
+      <a href="#" class="fas fa-user"></a>
+    </div>
+  </header>
+
+  <section class="trangchu" id="trangchu">
+    <div class="gth-container">
+      <div class="gth">
+        <h3>KHÔNG GIAN SÁCH</h3>
+        <p>Chào mừng bạn đến với thế giới của tri thức và tưởng tượng, nơi những trang sách mở ra hành trình không giới
+          hạn!</p>
       </div>
- </header>
+    </div>
+    <div class="book-slider">
+      <button class="prev">&#10094;</button>
 
-    <section class="trangchu" id="trangchu">
-  <div class="gth-container">
-    <div class="gth">
-      <h3>KHÔNG GIAN SÁCH</h3>
-      <p>Chào mừng bạn đến với thế giới của tri thức và tưởng tượng, nơi những trang sách mở ra hành trình không giới hạn!</p>
-  </div>
-  </div>
-  <div class="book-slider">
-  <button class="prev">&#10094;</button>
-
-   <div class="book-track">
-       <img src="./images/tatden.jpg" alt="Sách 1">
-       <img src="./images/Trong Họa Có Phúc.jpeg" alt="Sách 2">
-       <img src="./images/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 3">
-   </div>
-   <button class="next">&#10095;</button>
-   </div>
-</section>
-<script>
+      <div class="book-track">
+        <img src="./images/tatden.jpeg" alt="Sách 1">
+        <img src="./images/Trong Họa Có Phúc.jpeg" alt="Sách 2">
+        <img src="./images/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 3">
+      </div>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+  <script>
     const track = document.querySelector('.book-track');
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
@@ -104,76 +108,76 @@
   <p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #000000;">Nổi bật</p>
 
   <div class="featured-books">
-  <div class="book-item">
-    <a href="./doctruyen/Tat_den.html"><img src="./images/tatden.jpg" alt="Sách 1"></a>
-    <p class="book-title">Tắt đèn</p>
+    <div class="book-item">
+      <a href="./doctruyen/Tat_den.html"><img src="./images/tatden.jpg" alt="Sách 1"></a>
+      <p class="book-title">Tắt đèn</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/Trong Họa Có Phúc.jpg" alt="Sách 2">
+      <p class="book-title">Trong Họa Có Phúc</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 3">
+      <p class="book-title">Tiếng Chim Hót Trong Bụi Mận Gai</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/nguoidauyeu.jpg" alt="Sách 4">
+      <p class="book-title">Người Đầu Yêu</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/Tớ bị cậu lừa rồi!.jpg" alt="Sách 4">
+      <p class="book-title">Người Đầu Yêu</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/Không Gia Đình.jpg" alt="Sách 4">
+      <p class="book-title">Người Đầu Yêu</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/dapnoibansatdiho.png" alt="Sách 4">
+      <p class="book-title">Người Đầu Yêu</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/dacnhantam1.jpg" alt="Sách 4">
+      <p class="book-title">Người Đầu Yêu</p>
+    </div>
   </div>
-  <div class="book-item">
-    <img src="./images/Trong Họa Có Phúc.jpg" alt="Sách 2">
-    <p class="book-title">Trong Họa Có Phúc</p>
-  </div>
-  <div class="book-item">
-    <img src="./images/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 3">
-    <p class="book-title">Tiếng Chim Hót Trong Bụi Mận Gai</p>
-  </div>
-  <div class="book-item">
-    <img src="./images/nguoidauyeu.jpg" alt="Sách 4">
-    <p class="book-title">Người Đầu Yêu</p>
-  </div>
-   <div class="book-item">
-    <img src="./images/Tớ bị cậu lừa rồi!.jpg" alt="Sách 4">
-    <p class="book-title">Người Đầu Yêu</p>
-  </div>
-   <div class="book-item">
-    <img src="./images/Không Gia Đình.jpg" alt="Sách 4">
-    <p class="book-title">Người Đầu Yêu</p>
-  </div>
-   <div class="book-item">
-    <img src="./images/dapnoibansatdiho.png" alt="Sách 4">
-    <p class="book-title">Người Đầu Yêu</p>
-  </div>
-   <div class="book-item">
-    <img src="./images/dacnhantam1.jpg" alt="Sách 4">
-    <p class="book-title">Người Đầu Yêu</p>
-  </div>
-</div>
 
-<p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #000000;">Mới nhất</p>
+  <p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #000000;">Mới nhất</p>
 
   <div class="featured-books">
-  <div class="book-item">
-    <img src="./images/tatden.jpg" alt="Sách 1">
-    <p class="book-title">Tắt đèn</p>
+    <div class="book-item">
+      <img src="./images/tatden.jpeg" alt="Sách 1">
+      <p class="book-title">Tắt đèn</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/Trong Họa Có Phúc.jpeg" alt="Sách 2">
+      <p class="book-title">Trong Họa Có Phúc</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 3">
+      <p class="book-title">Tiếng Chim Hót Trong Bụi Mận Gai</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/nguoidauyeu.jpg" alt="Sách 4">
+      <p class="book-title">Người Đầu Yêu</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/Tớ bị cậu lừa rồi!.jpg" alt="Sách 4">
+      <p class="book-title">Người Đầu Yêu</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/Không Gia Đình.jpg" alt="Sách 4">
+      <p class="book-title">Người Đầu Yêu</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/dapnoibansatdiho.png" alt="Sách 4">
+      <p class="book-title">Người Đầu Yêu</p>
+    </div>
+    <div class="book-item">
+      <img src="./images/dacnhantam1.jpg" alt="Sách 4">
+      <p class="book-title">Người Đầu Yêu</p>
+    </div>
   </div>
-  <div class="book-item">
-    <img src="./images/Trong Họa Có Phúc.jpg" alt="Sách 2">
-    <p class="book-title">Trong Họa Có Phúc</p>
-  </div>
-  <div class="book-item">
-    <img src="./images/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 3">
-    <p class="book-title">Tiếng Chim Hót Trong Bụi Mận Gai</p>
-  </div>
-  <div class="book-item">
-    <img src="./images/nguoidauyeu.jpg" alt="Sách 4">
-    <p class="book-title">Người Đầu Yêu</p>
-  </div>
-   <div class="book-item">
-    <img src="./images/Tớ bị cậu lừa rồi!.jpg" alt="Sách 4">
-    <p class="book-title">Người Đầu Yêu</p>
-  </div>
-   <div class="book-item">
-    <img src="./images/Không Gia Đình.jpg" alt="Sách 4">
-    <p class="book-title">Người Đầu Yêu</p>
-  </div>
-   <div class="book-item">
-    <img src="./images/dapnoibansatdiho.png" alt="Sách 4">
-    <p class="book-title">Người Đầu Yêu</p>
-  </div>
-   <div class="book-item">
-    <img src="./images/dacnhantam1.jpg" alt="Sách 4">
-    <p class="book-title">Người Đầu Yêu</p>
-  </div>
-</div>
 </body>
-</html>
 
+</html>
