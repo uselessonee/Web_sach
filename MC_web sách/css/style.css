@@ -91,7 +91,7 @@ header .logo {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 50%;
+  top: 100%;
   left: 30%;
   transform: translateX(-50%);
   background: white;
@@ -117,7 +117,12 @@ header .logo {
 
   font-size: 5px; 
 }
-
+.dropdown-content td a {
+  font-size: 1.4rem;
+  color: #2c2a2a;
+  display: block;
+  padding: 5px 0;
+}
 .dropdown-content td:hover {
   background: #f0f0f0;
   color: var(--nau);
@@ -153,7 +158,7 @@ header .logo {
   line-height: 1.5rem;
 }
 
-/* Book slider */
+
 .book-slider {
   position: relative;
   width: 100%;
@@ -218,7 +223,7 @@ header .logo {
 
 .book-title {
   margin-top: 0.5rem;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: #333;
   font-weight: bold;
 }

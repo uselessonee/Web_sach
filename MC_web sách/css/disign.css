@@ -1,153 +1,56 @@
-body {
-   background-color: #1e1e1e;
-   color: #f0f0f0;
-   font-family: Arial, sans-serif;
-   margin: 0;
+.content-book {
+  padding: 8rem 3rem 2rem;
+  background-color: #fff;
 }
 
-.header {
-   background-color: #0ba747;
-   padding: 15px 5%;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+.book-detail {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: flex-start; 
+  flex-wrap: wrap; 
 }
 
-.logo {
-   font-size: 24px;
-   font-weight: bold;
-   text-decoration: none;
-   color: #ffffff;
+.book-left {
+  flex: 0 0 300px;
+  max-width: 500px;
+  text-align: left;
 }
 
-.menu {
-   display: flex;
-   gap: 20px;
-   align-items: center;
-}
-
-.menu a {
-   color: #f0f0f0;
-   text-decoration: none;
-   padding: 10px 15px;
-   border-radius: 5px;
-   transition: background 0.3s;
-}
-
-.menu a:hover {
-   background-color: #ffffff;
-}
-
-.dropdown {
-   position: relative;
-}
-
-.dropdown-content {
-   display: none;
-   position: absolute;
-   background-color: #333;
-   padding: 10px;
-   border-radius: 5px;
-   top: 120%;
-   left: 0;
-   z-index: 1000;
-}
-
-.dropdown:hover .dropdown-content {
-   display: block;
-}
-
-.dropdown-content table td {
-   padding: 5px 10px;
-}
-
-.icons a {
-   color: #ffffff;
-   font-size: 18px;
-   margin-left: 15px;
-}
-
-/* GIAO DIỆN TOUR */
-.tour {
-   padding: 40px 10%;
-}
-
-.tt h1 {
-   text-align: center;
-   font-size: 40px;
-   margin-bottom: 40px;
-   color: #ffffff;
-}
-
-.grid {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 30px;
-}
-
-.box {
-   background-color: #ffffff;
-   border-radius: 8px;
-   overflow: hidden;
-   transition: transform 0.3s ease;
-   text-align: center;
-   box-shadow: 0 4px 8px rgba(253, 145, 22, 0.3);
-}
-
-.box:hover {
-   transform: scale(1.03);
-}
-
-.box img {
-   width: 100%;
-   height: 250px;
-   object-fit: cover;
-}
-
-.box h3 {
-   margin: 15px 0;
-   font-size: 20px;
-   color: #ffffff;
-}
-
-/* Không cần responsive nếu chỉ hỗ trợ desktop */
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  padding: 0.2rem;
-  min-width: 130px;
-  z-index: 1000;
-  box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-content table {
+.book-left img {
   width: 100%;
-  border-collapse: collapse;
-  font-size: 0.8rem; /* nhỏ hơn nữa */
-  text-align: center;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.dropdown-content td {
-  padding: 0.2rem 0.4rem;
-  border-bottom: 1px solid #eee;
-  cursor: pointer;
-  white-space: nowrap;
+.book-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0 0.5rem;
+  color: #333;
 }
 
-.dropdown-content td a {
-  font-size: 0.8rem;
-  color: #2c2a2a;
-  display: block;
-  padding: 2px 0;
+.book-author {
+  font-size: 1.6rem;
+  color: #030303;
 }
 
-.dropdown-content td:hover {
-  background-color: #f0f0f0;
+.book-right {
+  flex: 1;
+  max-width: 900px;
+}
+
+.book-right h2 {
+  font-size: 2.4rem;
   color: var(--nau);
+  margin-bottom: 1rem;
+}
+
+.book-right p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #222;
+  text-align: justify;
 }
