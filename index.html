@@ -58,80 +58,17 @@
 
   <p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #000000;">Nổi bật</p>
 
-  <div class="featured-books">
-    <div class="book-item">
-      <a href="/doctruyen/Tat_den.html"><img src="./images/tatden.jpeg" alt="Sách 1"></a>
-      <p class="book-title">Tắt đèn</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/Trong Họa Có Phúc.jpeg" alt="Sách 2">
-      <p class="book-title">Trong Họa Có Phúc</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 3">
-      <p class="book-title">Tiếng Chim Hót Trong Bụi Mận Gai</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/nguoidauyeu.jpg" alt="Sách 4">
-      <p class="book-title">Người Đầu Yêu</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/Tớ bị cậu lừa rồi!.jpg" alt="Sách 4">
-      <p class="book-title">Người Đầu Yêu</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/Không Gia Đình.jpg" alt="Sách 4">
-      <p class="book-title">Người Đầu Yêu</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/dapnoibansatdiho.png" alt="Sách 4">
-      <p class="book-title">Người Đầu Yêu</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/dacnhantam1.jpg" alt="Sách 4">
-      <p class="book-title">Người Đầu Yêu</p>
-    </div>
+  <div class="featured-books" id="featuredBooksContainer">
+  
   </div>
 
   <p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #000000;">Mới nhất</p>
 
-  <div class="featured-books">
-    <div class="book-item">
-      <img src="./images/tatden.jpeg" alt="Sách 1">
-      <p class="book-title">Tắt đèn</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/Trong Họa Có Phúc.jpeg" alt="Sách 2">
-      <p class="book-title">Trong Họa Có Phúc</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 3">
-      <p class="book-title">Tiếng Chim Hót Trong Bụi Mận Gai</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/nguoidauyeu.jpg" alt="Sách 4">
-      <p class="book-title">Người Đầu Yêu</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/Tớ bị cậu lừa rồi!.jpg" alt="Sách 4">
-      <p class="book-title">Người Đầu Yêu</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/Không Gia Đình.jpg" alt="Sách 4">
-      <p class="book-title">Người Đầu Yêu</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/dapnoibansatdiho.png" alt="Sách 4">
-      <p class="book-title">Người Đầu Yêu</p>
-    </div>
-    <div class="book-item">
-      <img src="./images/dacnhantam1.jpg" alt="Sách 4">
-      <p class="book-title">Người Đầu Yêu</p>
-    </div>
+  <div class="featured-books" id="latestBooksContainer">
+    
   </div>
 </body>
 <footer id="footer-placeholder"></footer>
-
 <!-- Load header và footer từ external file -->
 <script>
   fetch('./Elements/header.html') // đường dẫn đến file header.html
@@ -149,5 +86,7 @@
     })
     .catch(error => console.error('Error loading footer:', error)); // xử lý lỗi nếu có
 </script>
+
+<script src="./js/Indexloader.js"></script>
 
 </html>
