@@ -1,0 +1,276 @@
+:root {
+  --nau: #996600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #be870e;
+  padding: 2rem 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.menu a {
+  font-size: 2rem;
+  color: #333;
+  padding: 0 1.5rem;
+}
+
+.menu a:hover {
+  color: var(--nau);
+}
+
+.icons a {
+  font-size: 3rem;
+  color: #333;
+  margin-left: 1.5rem;
+}
+
+.icons a:hover {
+  color: var(--nau);
+}
+
+#thanhcuon {
+  display: none;
+}
+
+.fa-bars {
+  font-size: 3rem;
+  color: #333;
+  border: 0.1rem solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* menu  thể loại*/
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  z-index: 500;
+  min-width: 50px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+   border-radius: 10px;
+}
+
+.dropdown-content table {
+  border-collapse: collapse;
+  width: 50px;
+  font-size: 1px;
+}
+
+.dropdown-content td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  cursor: pointer;
+
+  font-size: 5px; 
+}
+
+.dropdown-content td:hover {
+  background: #f0f0f0;
+  color: var(--nau);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Trang chủ */
+.trangchu {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fffefe;
+  background-size: cover;
+  background-position: center;
+}
+
+.trangchu .gth {
+  max-width: 50rem;
+}
+
+.trangchu .gth h3 {
+  font-size: 3rem;
+  color: #705807;
+}
+
+.trangchu .gth p {
+  font-size: 1.5rem;
+  color: rgb(43, 43, 2);
+  padding: 1rem 0;
+  line-height: 1.5rem;
+}
+
+/* Book slider */
+.book-slider {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 30px auto;
+  overflow: hidden;
+}
+
+.book-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.book-track img {
+  width: 100%;
+  max-width: 300px;
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+
+.book-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 10px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.book-slider .prev {
+  left: 0;
+}
+
+.book-slider .next {
+  right: 0;
+}
+  /* hình ảnh ở phần nổi bật*/
+  .featured-books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+  row-gap: 5rem;    
+}
+
+.book-item {
+  width: 300px;
+  text-align: center;
+}
+
+.book-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.book-title {
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+/* Responsive */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  header {
+    padding: 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fa-bars {
+    display: block;
+  }
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #eee;
+    flex-direction: column;
+    display: none;
+  }
+  #thanhcuon:checked ~ .menu {
+    display: flex;
+  }
+  .menu a {
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+
