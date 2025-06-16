@@ -1,47 +1,95 @@
-.book-detail {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+ body {
+    background: linear-gradient(to bottom, #3e2f2f, #1e1e1e); /* nâu tối → đen xám */
+    color: #f0f0f0;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  .book-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .book-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .book-left img {
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+  }
+
+  .book-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    flex: 1;
+  }
+
+  .book-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffe4b5;
+  }
+
+  .book-author {
+    font-size: 18px;
+    color: #d8d8d8;
+  }
+
+  .read-icon {
+    background: #a0522d;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    width: fit-content;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  .read-icon:hover {
+    background: #c1693c;
+  }
+
+  p {
+    font-size: 16px;
+    color: #f0f0f0;
+  }
+
+  .book-right h2 {
+    color: #ffd700;
+  }
+
+  a {
+    color: #add8e6;
+    text-decoration: underline;
+  }
+
+  a {
+  color: #add8e6;
+  text-decoration: none; 
+  transition: 0.3s;
 }
 
-.book-info-row {
-  display: flex;
-  align-items: flex-start; 
-  gap: 30px; 
+a:hover {
+  color: #87cefa;
+  text-decoration: none; 
 }
 
-.book-left img {
-  width: 200px;
-  height: auto;
-  border-radius: 8px;
-  margin: 10px 0;
-}
-
-.book-meta {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 10px; 
-}
-
-.book-title {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.book-author {
-  font-size: 20px;
-  color: #000000;
-}
-
-.book-right {
-  margin-top: 10px;
-}
 .content-book {
-  padding-top: 100px;
-}
-p{
-  font-size: 15px;
+  margin-top: 60px; 
 }
