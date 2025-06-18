@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Đọc sách online</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
- <link rel="stylesheet" href="/css/The_loai.css">
+ <link rel="stylesheet" href="../../css/The_loai.css">
 
 </head>
 
@@ -123,7 +123,7 @@
 
 <!-- Load header và footer từ external file -->
 <script>
-  fetch('./Elements/header.html') // đường dẫn đến file header.html
+  fetch('../../Elements/header.html') // đường dẫn đến file header.html
     .then(response => response.text()) // đổi response sang text để lấy nội dung HTML
     .then(data => {
       document.getElementById('header-placeholder').innerHTML = data;
@@ -131,7 +131,7 @@
     .catch(error => console.error('Error loading header:', error)); // xử lý lỗi nếu có
 
   // Load footer from external file
-  fetch('./Elements/footer.html') // đường dẫn đến file footer.html
+  fetch('../../Elements/footer.html') // đường dẫn đến file footer.html
     .then(response => response.text()) // đổi response sang text để lấy nội dung HTML
     .then(data => {
       document.getElementById('footer-placeholder').innerHTML = data;
