@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imgElement.src = book.image;
         imgElement.alt = `Bìa sách: ${book.title}`; // Sử dụng tiêu đề làm alt text cho ảnh
         imgElement.onerror = () => {
-            imgElement.src = '#'; // Ảnh dự phòng nếu ả#nh gốc lỗi
+            imgElement.src = '#'; // Ảnh dự phòng nếu ảnh gốc lỗi
             imgElement.alt = 'Ảnh bìa không khả dụng';
         };
 
@@ -16,20 +16,21 @@ document.addEventListener('DOMContentLoaded', () => {
         titleParagraph.classList.add('book-title');
         titleParagraph.textContent = book.title;
 
-        // Nếu có link, tạo thẻ <a> và đặt ảnh vào trong
-        if (book.link && book.link !== '#') {
-            const anchorElement = document.createElement('a');
-            anchorElement.href = book.link;
-            anchorElement.appendChild(imgElement); // Đặt ảnh vào trong thẻ <a>
-            bookItemDiv.appendChild(anchorElement);
-        } else {
-            // Nếu không có link (hoặc link là #), chỉ đặt ảnh trực tiếp
-            bookItemDiv.appendChild(imgElement);
-        }
-        
-        bookItemDiv.appendChild(titleParagraph);
+        if (book.id) {
+    const anchorElement = document.createElement('a');
+    anchorElement.href = `The_loai.html?id=${book.id}`;
+    anchorElement.appendChild(imgElement);
+    bookItemDiv.appendChild(anchorElement);
+} else {
+    bookItemDiv.appendChild(imgElement);
+}
+bookItemDiv.appendChild(titleParagraph);
 
-        return bookItemDiv;
+
+
+
+return bookItemDiv;
+
     }
 
     
