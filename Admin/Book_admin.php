@@ -1,9 +1,6 @@
 <?php
 
 // --- Cấu hình ---
-// Điều chỉnh đường dẫn đến file cơ sở dữ liệu dựa trên cấu trúc thư mục của bạn.
-// Ví dụ: nếu admin_books.php nằm trong 'my_website/admin/' và Database.db nằm trong 'my_website/DB/',
-// thì '../DB/Database.db' là đúng.
 $databaseFile = '../DB/Database.db';
 
 // Biến cho thông báo (sẽ hiển thị trên UI)
@@ -33,13 +30,13 @@ try {
     // --- Xử lý Gửi Form khi thêm sách mới ---
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_book'])) {
         // Làm sạch và kiểm tra dữ liệu đầu vào từ form
-        // Sử dụng FILTER_SANITIZE_STRING hoặc FILTER_UNSAFE_RAW kết hợp với htmlspecialchars cho hiển thị
+        // Sử dụng FILTER_SANITIZE_URL kết hợp với htmlspecialchars cho hiển thị
         // FILTER_SANITIZE_URL là tốt nhất cho URL
-        $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
-        $author = filter_input(INPUT_POST, 'author', FILTER_SANITIZE_STRING);
+        $title = htmlspecialchars(trim(filter_input(INPUT_POST, 'title', FILTER_DEFAULT)), ENT_QUOTES, 'UTF-8');
+        $author = htmlspecialchars(trim(filter_input(INPUT_POST, 'author', FILTER_DEFAULT)), ENT_QUOTES, 'UTF-8');
         $cover_image_url = filter_input(INPUT_POST, 'cover_image_url', FILTER_SANITIZE_URL);
-        $summary = filter_input(INPUT_POST, 'summary', FILTER_SANITIZE_STRING);
-        $published_date = filter_input(INPUT_POST, 'published_date', FILTER_SANITIZE_STRING);
+        $summary = htmlspecialchars(trim(filter_input(INPUT_POST, 'summary', FILTER_DEFAULT)), ENT_QUOTES, 'UTF-8');
+        $published_date = htmlspecialchars(trim(filter_input(INPUT_POST, 'published_date', FILTER_DEFAULT)), ENT_QUOTES, 'UTF-8');
         $read_link = filter_input(INPUT_POST, 'read_link', FILTER_SANITIZE_URL);
 
         // Loại bỏ khoảng trắng thừa từ đầu và cuối chuỗi
@@ -119,9 +116,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bảng Quản Trị Sách</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -139,18 +134,18 @@ try {
         .form-input {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid #d1d5db; /* Gray-300 */
+            border: 1px solid #d1d5db; 
             border-radius: 8px;
             font-size: 1rem;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
         .form-input:focus {
             outline: none;
-            border-color: #3b82f6; /* Blue-500 */
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); /* Blue-300 với độ trong suốt */
+            border-color: #3b82f6; 
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); 
         }
         .btn-primary {
-            background-color: #22c55e; /* Green-500 */
+            background-color: #22c55e; 
             color: white;
             padding: 0.8rem 1.5rem;
             border-radius: 8px;
@@ -160,7 +155,7 @@ try {
             border: none;
         }
         .btn-primary:hover {
-            background-color: #16a34a; /* Green-600 */
+            background-color: #16a34a;
         }
         .message {
             padding: 1rem;
@@ -169,14 +164,14 @@ try {
             font-weight: 500;
         }
         .message.success {
-            background-color: #dcfce7; /* Green-100 */
-            color: #15803d; /* Green-700 */
-            border: 1px solid #bbf7d0; /* Green-200 */
+            background-color: #dcfce7; 
+            color: #15803d; 
+            border: 1px solid #bbf7d0;
         }
         .message.error {
-            background-color: #fee2e2; /* Red-100 */
-            color: #b91c1c; /* Red-700 */
-            border: 1px solid #fca5a5; /* Red-200 */
+            background-color: #fee2e2;
+            color: #b91c1c; 
+            border: 1px solid #fca5a5; 
         }
         table {
             width: 100%;
@@ -188,12 +183,12 @@ try {
         th, td {
             padding: 1rem;
             text-align: left;
-            border-bottom: 1px solid #e5e7eb; /* Gray-200 */
+            border-bottom: 1px solid #e5e7eb; 
         }
         th {
-            background-color: #f3f4f6; /* Gray-100 */
+            background-color: #f3f4f6; 
             font-weight: 600;
-            color: #4b5563; /* Gray-600 */
+            color: #4b5563;
             text-transform: uppercase;
             font-size: 0.875rem;
             letter-spacing: 0.05em;
@@ -205,7 +200,7 @@ try {
             background-color: #f9fafb; /* Dải màu nhạt hơn */
         }
         a {
-            color: #2563eb; /* Blue-600 */
+            color: #2563eb; 
             text-decoration: none;
         }
         a:hover {
@@ -213,9 +208,9 @@ try {
         }
     </style>
 </head>
-<body class="p-4">
+<body>
     <div class="container">
-        <h1 class="text-4xl font-bold text-center mb-8 text-gray-800">Bảng Quản Trị Sách</h1>
+        <h1>Bảng Quản Trị Sách</h1>
 
         <?php if ($message): ?>
             <div class="message <?php echo $messageType; ?>">
@@ -223,71 +218,71 @@ try {
             </div>
         <?php endif; ?>
 
-        <div class="bg-gray-50 p-6 rounded-xl shadow-inner mb-8">
-            <h2 class="text-2xl font-semibold mb-6 text-gray-700">Thêm Sách Mới</h2>
-            <form action="admin_books.php" method="POST" class="space-y-5">
+        <div>
+            <h2>Thêm Sách Mới</h2>
+            <form action="admin_books.php" method="POST" >
                 <div>
-                    <label for="title" class="block text-sm font-medium text-gray-700 mb-1">Tiêu đề <span class="text-red-500">*</span></label>
+                    <label for="title" >Tiêu đề <span>*</span></label>
                     <input type="text" id="title" name="title" required class="form-input" placeholder="Ví dụ: Đắc nhân tâm">
                 </div>
                 <div>
-                    <label for="author" class="block text-sm font-medium text-gray-700 mb-1">Tác giả <span class="text-red-500">*</span></label>
+                    <label for="author" >Tác giả <span class="text-red-500">*</span></label>
                     <input type="text" id="author" name="author" required class="form-input" placeholder="Ví dụ: Dale Carnegie">
                 </div>
                 <div>
-                    <label for="cover_image_url" class="block text-sm font-medium text-gray-700 mb-1">URL ảnh bìa</label>
+                    <label for="cover_image_url">URL ảnh bìa</label>
                     <input type="url" id="cover_image_url" name="cover_image_url" class="form-input" placeholder="Ví dụ: https://example.com/anh-bia.jpg">
                 </div>
                 <div>
-                    <label for="summary" class="block text-sm font-medium text-gray-700 mb-1">Tóm tắt</label>
+                    <label for="summary">Tóm tắt</label>
                     <textarea id="summary" name="summary" rows="4" class="form-input" placeholder="Mô tả ngắn gọn về cuốn sách..."></textarea>
                 </div>
                 <div>
-                    <label for="published_date" class="block text-sm font-medium text-gray-700 mb-1">Ngày xuất bản (YYYY-MM-DD)</label>
+                    <label for="published_date">Ngày xuất bản (YYYY-MM-DD)</label>
                     <input type="date" id="published_date" name="published_date" class="form-input">
                 </div>
                 <div>
-                    <label for="read_link" class="block text-sm font-medium text-gray-700 mb-1">Đường dẫn đọc <span class="text-red-500">*</span></label>
+                    <label for="read_link">Đường dẫn đọc <span>*</span></label>
                     <input type="url" id="read_link" name="read_link" required class="form-input" placeholder="Ví dụ: https://example.com/doc-sach-nay" pattern="https?://.+" title="Vui lòng nhập một URL hợp lệ (ví dụ: https://example.com)">
                 </div>
-                <button type="submit" name="add_book" class="btn-primary w-full sm:w-auto">Thêm Sách</button>
+                <button type="submit" name="add_book" >Thêm Sách</button>
             </form>
         </div>
 
-        <div class="mt-10">
-            <h2 class="text-2xl font-semibold mb-6 text-gray-700">Các Sách Hiện Có</h2>
+        <div>
+            <h2 >Các Sách Hiện Có</h2>
             <?php if (!empty($books)): ?>
-                <div class="overflow-x-auto rounded-xl shadow">
-                    <table class="min-w-full bg-white">
+                <div>
+                    <table>
                         <thead>
                             <tr>
-                                <th class="py-3 px-4">ID</th>
-                                <th class="py-3 px-4">Tiêu đề</th>
-                                <th class="py-3 px-4">Tác giả</th>
-                                <th class="py-3 px-4">Ngày xuất bản</th>
-                                <th class="py-3 px-4">Đường dẫn đọc</th>
-                                <th class="py-3 px-4">Tóm tắt</th>
-                                <th class="py-3 px-4">Ảnh bìa</th>
+                                <th>ID</th>
+                                <th>Tiêu đề</th>
+                                <th>Tác giả</th>
+                                <th>Ngày xuất bản</th>
+                                <th>Đường dẫn đọc</th>
+                                <th>Tóm tắt</th>
+                                <th>Ảnh bìa</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($books as $book): ?>
                                 <tr>
-                                    <td class="py-3 px-4 text-gray-700"><?php echo htmlspecialchars($book['id']); ?></td>
-                                    <td class="py-3 px-4 text-gray-700"><?php echo htmlspecialchars($book['title']); ?></td>
-                                    <td class="py-3 px-4 text-gray-700"><?php echo htmlspecialchars($book['author']); ?></td>
-                                    <td class="py-3 px-4 text-gray-700"><?php echo htmlspecialchars($book['published_date']); ?></td>
-                                    <td class="py-3 px-4 text-blue-600 hover:underline">
+                                    <td><?php echo htmlspecialchars($book['id']); ?></td>
+                                    <td><?php echo htmlspecialchars($book['title']); ?></td>
+                                    <td><?php echo htmlspecialchars($book['author']); ?></td>
+                                    <td><?php echo htmlspecialchars($book['published_date']); ?></td>
+                                    <td>
                                         <a href="<?php echo htmlspecialchars($book['read_link']); ?>" target="_blank" class="truncate max-w-[200px] block"><?php echo htmlspecialchars($book['read_link']); ?></a>
                                     </td>
-                                    <td class="py-3 px-4 text-gray-700 text-sm max-w-[300px] overflow-hidden text-ellipsis whitespace-nowrap" title="<?php echo htmlspecialchars($book['summary']); ?>">
+                                    <td title="<?php echo htmlspecialchars($book['summary']); ?>">
                                         <?php echo htmlspecialchars($book['summary']); ?>
                                     </td>
                                     <td class="py-3 px-4">
                                         <?php if (!empty($book['cover_image_url'])): ?>
-                                            <img src="<?php echo htmlspecialchars($book['cover_image_url']); ?>" alt="Ảnh bìa" class="w-16 h-20 object-cover rounded-md shadow" onerror="this.onerror=null;this.src='https://placehold.co/64x80/cccccc/333333?text=Không+Ảnh';" title="Ảnh Bìa">
+                                            <img src="<?php echo htmlspecialchars($book['cover_image_url']); ?>" alt="Ảnh bìa" onerror="this.onerror=null;this.src='https://placehold.co/64x80/cccccc/333333?text=Không+Ảnh';" title="Ảnh Bìa">
                                         <?php else: ?>
-                                            <img src="https://placehold.co/64x80/cccccc/333333?text=Không+Ảnh" alt="Không Ảnh" class="w-16 h-20 object-cover rounded-md shadow" title="Không Ảnh Bìa">
+                                            <img src="https://placehold.co/64x80/cccccc/333333?text=Không+Ảnh" alt="Không Ảnh"  title="Không Ảnh Bìa">
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -296,7 +291,7 @@ try {
                     </table>
                 </div>
             <?php else: ?>
-                <p class="text-gray-600">Không tìm thấy sách nào trong cơ sở dữ liệu. Vui lòng thêm sách bằng biểu mẫu trên!</p>
+                <p >Không tìm thấy sách nào trong cơ sở dữ liệu. Vui lòng thêm sách bằng biểu mẫu trên!</p>
             <?php endif; ?>
         </div>
     </div>

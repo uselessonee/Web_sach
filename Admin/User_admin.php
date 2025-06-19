@@ -1,8 +1,6 @@
 <?php
 
 // --- Cấu hình ---
-// Điều chỉnh đường dẫn file cơ sở dữ liệu dựa trên cấu trúc thư mục thực tế của bạn.
-// Đường dẫn này nên giống với trong admin_books.php nếu books.db được dùng chung.
 $databaseFile = '../DB/Database.db';
 
 // Khởi tạo biến cho thông báo
@@ -55,7 +53,7 @@ try {
             $message = 'Vui lòng nhập địa chỉ email hợp lệ.';
             $messageType = 'error';
         } else {
-            // Băm mật khẩu một cách an toàn
+            // Hash mật khẩu
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
             // Chuẩn bị và thực thi câu lệnh SQL INSERT
@@ -73,7 +71,6 @@ try {
                 ]);
                 $message = 'Thêm người dùng thành công!';
                 $messageType = 'success';
-                // Lưu ý: Trong ứng dụng thực tế, bạn có thể xóa dữ liệu form hoặc chuyển hướng tại đây.
 
             } catch (PDOException $e) {
                 // Kiểm tra lỗi trùng email (unique)
@@ -88,7 +85,7 @@ try {
     }
 
     // --- Lấy tất cả người dùng và sách họ theo dõi để hiển thị ---
-    $users = []; // Khởi tạo mảng rỗng cho người dùng
+    $users = []; // Khởi tạo mảng rỗng cho Admin
     $selectUsersSQL = "
         SELECT
             u.id,
@@ -122,12 +119,9 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Admin Panel</title>
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap)" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f4f7f6; /* Nền xám xanh nhạt */
+            background-color: #f4f7f6;
             color: #333;
         }
         .container {
@@ -141,18 +135,18 @@ try {
         .form-input {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid #d1d5db; /* Xám-300 */
+            border: 1px solid #d1d5db; 
             border-radius: 8px;
             font-size: 1rem;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
         .form-input:focus {
             outline: none;
-            border-color: #3b82f6; /* Xanh dương-500 */
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); /* Xanh dương-300 với độ trong suốt */
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); 
         }
         .btn-primary {
-            background-color: #22c55e; /* Xanh lá-500 */
+            background-color: #22c55e;
             color: white;
             padding: 0.8rem 1.5rem;
             border-radius: 8px;
@@ -162,7 +156,7 @@ try {
             border: none;
         }
         .btn-primary:hover {
-            background-color: #16a34a; /* Xanh lá-600 */
+            background-color: #16a34a;
         }
         .message {
             padding: 1rem;
@@ -171,14 +165,14 @@ try {
             font-weight: 500;
         }
         .message.success {
-            background-color: #dcfce7; /* Xanh lá-100 */
-            color: #15803d; /* Xanh lá-700 */
-            border: 1px solid #bbf7d0; /* Xanh lá-200 */
+            background-color: #dcfce7; 
+            color: #15803d; 
+            border: 1px solid #bbf7d0;
         }
         .message.error {
-            background-color: #fee2e2; /* Đỏ-100 */
-            color: #b91c1c; /* Đỏ-700 */
-            border: 1px solid #fca5a5; /* Đỏ-200 */
+            background-color: #fee2e2; 
+            color: #b91c1c;
+            border: 1px solid #fca5a5; 
         }
         table {
             width: 100%;
@@ -190,12 +184,12 @@ try {
         th, td {
             padding: 1rem;
             text-align: left;
-            border-bottom: 1px solid #e5e7eb; /* Xám-200 */
+            border-bottom: 1px solid #e5e7eb; 
         }
         th {
-            background-color: #f3f4f6; /* Xám-100 */
+            background-color: #f3f4f6;
             font-weight: 600;
-            color: #4b5563; /* Xám-600 */
+            color: #4b5563;
             text-transform: uppercase;
             font-size: 0.875rem;
             letter-spacing: 0.05em;
@@ -204,13 +198,13 @@ try {
             border-bottom: none;
         }
         tr:nth-child(even) {
-            background-color: #f9fafb; /* Dải màu sáng hơn */
+            background-color: #f9fafb;
         }
     </style>
 </head>
-<body class="p-4">
+<body>
     <div class="container">
-        <h1 class="text-4xl font-bold text-center mb-8 text-gray-800">User Admin Panel</h1>
+        <h1 >User Admin Panel</h1>
 
         <?php if ($message): ?>
             <div class="message <?php echo $messageType; ?>">
@@ -218,45 +212,45 @@ try {
             </div>
         <?php endif; ?>
 
-        <div class="bg-gray-50 p-6 rounded-xl shadow-inner mb-8">
-            <h2 class="text-2xl font-semibold mb-6 text-gray-700">Thêm người dùng mới</h2>
-            <form action="admin_users.php" method="POST" class="space-y-5">
+        <div>
+            <h2 >Thêm người dùng mới</h2>
+            <form action="admin_users.php" method="POST">
                 <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Tên <span class="text-red-500">*</span></label>
-                    <input type="text" id="name" name="name" required class="form-input" placeholder="Ví dụ: Nguyễn Văn A">
+                    <label for="name">Tên <span>*</span></label>
+                    <input type="text" id="name" name="name" required class="form-input" placeholder="Ví dụ: Rick ashley">
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email <span class="text-red-500">*</span></label>
+                    <label for="email">Email <span>*</span></label>
                     <input type="email" id="email" name="email" required class="form-input" placeholder="Ví dụ: nguyenvana@email.com">
                 </div>
                 <div>
-                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Mật khẩu <span class="text-red-500">*</span></label>
+                    <label for="password">Mật khẩu <span>*</span></label>
                     <input type="password" id="password" name="password" required class="form-input" placeholder="Nhập mật khẩu">
                 </div>
-                <button type="submit" name="add_user" class="btn-primary w-full sm:w-auto">Thêm người dùng</button>
+                <button type="submit" name="add_user" >Thêm người dùng</button>
             </form>
         </div>
 
-        <div class="mt-10">
-            <h2 class="text-2xl font-semibold mb-6 text-gray-700">Người dùng hiện có</h2>
+        <div>
+            <h2>Người dùng hiện có</h2>
             <?php if (!empty($users)): ?>
-                <div class="overflow-x-auto rounded-xl shadow">
-                    <table class="min-w-full bg-white">
+                <div>
+                    <table>
                         <thead>
                             <tr>
-                                <th class="py-3 px-4">ID</th>
-                                <th class="py-3 px-4">Tên</th>
-                                <th class="py-3 px-4">Email</th>
-                                <th class="py-3 px-4">Sách đang theo dõi</th>
+                                <th>ID</th>
+                                <th >Tên</th>
+                                <th >Email</th>
+                                <th>Sách đang theo dõi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($users as $user): ?>
                                 <tr>
-                                    <td class="py-3 px-4 text-gray-700"><?php echo htmlspecialchars($user['id']); ?></td>
-                                    <td class="py-3 px-4 text-gray-700"><?php echo htmlspecialchars($user['name']); ?></td>
-                                    <td class="py-3 px-4 text-gray-700"><?php echo htmlspecialchars($user['email']); ?></td>
-                                    <td class="py-3 px-4 text-gray-700">
+                                    <td ><?php echo htmlspecialchars($user['id']); ?></td>
+                                    <td><?php echo htmlspecialchars($user['name']); ?></td>
+                                    <td><?php echo htmlspecialchars($user['email']); ?></td>
+                                    <td">
                                         <?php
                                         // Hiển thị sách đang theo dõi. GROUP_CONCAT nối chúng thành một chuỗi, phân tách bởi '; '
                                         echo !empty($user['followed_books_titles'])
@@ -270,7 +264,7 @@ try {
                     </table>
                 </div>
             <?php else: ?>
-                <p class="text-gray-600">Không tìm thấy người dùng nào trong cơ sở dữ liệu. Hãy thêm mới bằng form phía trên!</p>
+                <p>Không tìm thấy người dùng nào trong cơ sở dữ liệu. Hãy thêm mới bằng form phía trên!</p>
             <?php endif; ?>
         </div>
     </div>
