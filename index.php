@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Đọc sách online</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="icon" href="./images/book.png" type="image/x-icon">
 
@@ -37,7 +36,7 @@
     </div>
   </section>
   <script>
-    // JavaScript for the book slider
+    // JavaScript cho book slider
     // Lấy các phần tử cần thiết
     const track = document.querySelector('.book-track');
     const prevBtn = document.querySelector('.prev');

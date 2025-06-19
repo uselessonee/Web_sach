@@ -65,6 +65,10 @@ header .logo {
   margin-left: 1.5rem;
 }
 
+.user img {
+  width: 3rem;
+}
+
 .icons a:hover {
   color: var(--nau);
 }
