@@ -5,7 +5,7 @@ $error_message = '';
 $success_message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sbmDKy'])) {
-    $name = trim($_POST['txtHTen'] ?? '');
+    $name = trim($_POST['txtHTen'] ?? '');// htmlspecialchars(trim(filter_input(INPUT_POST, 'author', FILTER_DEFAULT)), ENT_QUOTES, 'UTF-8');
     $email = trim($_POST['txtEmail'] ?? '');
     $password = $_POST['txtMK'] ?? '';
     $confirm_password = $_POST['txtMKXN'] ?? '';
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sbmDKy'])) {
                 $stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
                 $stmt->bindParam(':name', $name);
                 $stmt->bindParam(':email', $email);
-                $stmt->bindParam(':password', $hashed_password); // Sử dụng mật khẩu đã băm
+                $stmt->bindParam(':password', $hashed_password); // Sử dụng mật khẩu đã hashed
                 $stmt->execute();
 
                 $success_message = 'Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.';
