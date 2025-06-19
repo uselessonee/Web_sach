@@ -1,5 +1,4 @@
 [
-
     {
         "id": "TN_1",
         "title": "Tắt đèn",
@@ -17,9 +16,7 @@
         "image": "./images/dapnoibansatdiho.png",
         "link": "./The_loai/Ngon_tinh/dapnoibansatdihoc.html",
         "date": "31/1/2024"
-
     },
-
     {
         "id": "NT_2",
         "title": "Người dấu yêu",
@@ -29,7 +26,6 @@
         "link": "./The_loai/Ngon_tinh/nguoidauyeu.html",
         "date": "12/12/2022"
     },
-
     {
         "id": "NT_3",
         "title": "Trong họa có phúc",
@@ -39,7 +35,6 @@
         "link": "./The_loai/Ngon_tinh/tronghoacophuc.html",
         "date": "30/06/2010"
     },
-
     {
         "id": "TL_1",
         "title": "Đắc nhân tâm",
@@ -49,7 +44,6 @@
         "link": "./The_loai/Tam_ly/dacnhantam.html",
         "date": "10/1936"
     },
-
     {
         "id": "TL_2",
         "title": "Tâm lý đám đông",
@@ -59,7 +53,6 @@
         "link": "./The_loai/Tam_ly/tamlyhocdamdong.html",
         "date": "1895"
     },
-
     {
         "id": "TL_3",
         "title": "Tư duy nhanh và chậm",
@@ -69,7 +62,6 @@
         "link": "./The_loai/Tam_ly/tuduynhanhcham.html",
         "date": "25/10/2011"
     },
-
     {
         "id": "TT_1",
         "title": "Đi qua mùa gió thổi",
@@ -79,7 +71,6 @@
         "link": "./The_loai/Tieu_thuyet/diquamuagiothoi.html",
         "date": "9/3/2024"
     },
-
     {
         "id": "TT_2",
         "title": "Tiếng chim hót trong bụi mận gai",
@@ -89,7 +80,6 @@
         "link": "./The_loai/Tieu_thuyet/tiengchimhottrongbuimangai.html",
         "date": "4/1977"
     },
-    
     {
         "id": "TT_3",
         "title": "Không gia đình",
@@ -99,8 +89,6 @@
         "link": "./The_loai/Tieu_thuyet/khonggd.html",
         "date": "1878"
     },
-
-
     {
         "id": "TN_2",
         "title": "Xóm gò",
@@ -110,7 +98,6 @@
         "link": "./The_loai/Truyen_ngan/xomgo.html",
         "date": "14/11/2020"
     },
-
     {
         "id": "TN_3",
         "title": "Tớ bị cậu lừa rồi !",

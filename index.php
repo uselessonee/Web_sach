@@ -1,76 +1,80 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-$databaseFile = './DB/user.sqlite';
-try {
-    // Create a new PDO instance for SQLite
-    $pdo = new PDO("sqlite:" . $databaseFile);
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Đọc sách online</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="./images/book.png" type="image/x-icon">
 
-    // Set error mode to exception for better error handling
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+</head>
 
-    echo "Connected to the SQLite database successfully!<br>";
+<body>
+  <header id="header-placeholder">
+    <?php include './Elements/header.html'; ?>
+  </header>
 
-        $createTableSQL = "
-        CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            username TEXT NOT NULL UNIQUE,
-            password TEXT NOT NULL
-        );
-    ";
-    $pdo->exec($createTableSQL);
-    echo "Table 'users' checked/created successfully!<br>";
+  <section class="trangchu" id="trangchu">
+    <div class="gth-container">
+      <div class="gth">
+        <h3>KHÔNG GIAN SÁCH</h3>
+        <p>Chào mừng bạn đến với thế giới của tri thức và tưởng tượng, nơi những trang sách mở ra hành trình không giới
+          hạn!</p>
+      </div>
+    </div>
+    <div class="book-slider">
+      <button class="prev">&#10094;</button>
 
-    // 4. Insert Sample User Data
-    // We'll insert a few sample users.
-    // Always hash passwords before storing them! password_hash() is recommended.
-    $usersToInsert = [
-        ['username' => 'admin', 'password' => password_hash('password123', PASSWORD_DEFAULT)],
-        ['username' => 'john.doe', 'password' => password_hash('securepass', PASSWORD_DEFAULT)],
-        ['username' => 'jane.smith', 'password' => password_hash('mysecret', PASSWORD_DEFAULT)]
-    ];
+      <div class="book-track">
+        <img src="./images/tatden.jpeg" alt="Sách 1">
+        <img src="./images/Trong Họa Có Phúc.jpeg" alt="Sách 2">
+        <img src="./images/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 3">
+      </div>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+  <script>
+    // JavaScript for the book slider
+    // Lấy các phần tử cần thiết
+    const track = document.querySelector('.book-track');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let index = 0;
+    // eventlistener cho next button
+    nextBtn.onclick = () => {
+      if (index < track.children.length - 1) {
+        index++; // tăng phần tử slider
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+    };
+    // eventlistener cho previous button
+    prevBtn.onclick = () => {
+      if (index > 0) {
+        index--;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+    };
+  </script>
 
-    $insertSQL = "INSERT INTO users (username, password) VALUES (:username, :password)";
-    $stmt = $pdo->prepare($insertSQL);
+  <p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #000000;">Nổi bật</p>
 
-    $insertedCount = 0;
-    foreach ($usersToInsert as $user) {
-        try {
-            $stmt->bindParam(':username', $user['username']);
-            $stmt->bindParam(':password', $user['password']);
-            $stmt->execute();
-            $insertedCount++;
-        } catch (PDOException $e) {
-            // Catch unique constraint violations for username
-            if ($e->getCode() == '23000') { // SQLite's unique constraint violation code
-                echo "Warning: User '{$user['username']}' already exists.<br>";
-            } else {
-                throw $e; // Re-throw other unexpected errors
-            }
-        }
-    }
-    echo "Attempted to insert {$insertedCount} new users (or found existing ones).<br>";
+  <div class="featured-books" id="featuredBooksContainer">
 
-    // 5. Verify Data (Optional: Select and display data)
-    echo "<br>Current Users in Database:<br>";
-    $selectSQL = "SELECT id, username FROM users"; // Don't select passwords for display!
-    $stmt = $pdo->query($selectSQL);
-    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  </div>
 
-    if (!empty($users)) {
-        echo "<table border='1'>";
-        echo "<tr><th>ID</th><th>Username</th></tr>";
-        foreach ($users as $user) {
-            echo "<tr><td>{$user['id']}</td><td>{$user['username']}</td></tr>";
-        }
-        echo "</table>";
-    } else {
-        echo "No users found in the database.";
-    }
+  <p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #000000;">Mới nhất</p>
 
-} catch (PDOException $e) {
-    echo "Database error: " . $e->getMessage();
-}
-// Close the PDO connection
-$pdo = null;
+  <div class="featured-books" id="latestBooksContainer">
 
-?>
+  </div>
+</body>
+<footer id="footer-placeholder">
+  <?php include './Elements/footer.html'; ?>
+</footer>
+
+<script src="./js/Indexloader.js"></script>
+
+</html>
