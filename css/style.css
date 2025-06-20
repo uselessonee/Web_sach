@@ -369,6 +369,10 @@ footer {
   color: #000000;
 }
 
+.social-icons a img {
+  width: 3rem;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .footer-content {

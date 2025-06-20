@@ -74,7 +74,7 @@ return bookItemDiv;
     // hoặc có một file JSON khác cho sách nổi bật.
     // Ví dụ: chỉ lấy 8 cuốn đầu tiên cho phần này:
     
-    loadBooks('featuredBooksContainer', '../data_json/data.json').then(() => {
+    loadBooks('featuredBooksContainer', '../json/data.json').then(() => {
         const container = document.getElementById('featuredBooksContainer');
         if (container) {
             // Giới hạn số lượng sách hiển thị (ví dụ 8 cuốn)
@@ -92,5 +92,5 @@ return bookItemDiv;
     // Tải sách vào container cho "Mới nhất"
     // Để minh họa, tôi dùng file JSON ví dụ, nhưng có thể có file tạo file 'new_books.json' riêng.
     // Hoặc có thể lấy dữ liệu từ 'books.json' và sắp xếp/lọc theo tiêu chí "mới nhất".
-    loadBooks('latestBooksContainer', '../data_json/data.json'); 
+    loadBooks('latestBooksContainer', '../json/data.json'); 
 });
