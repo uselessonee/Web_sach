@@ -1,5 +1,5 @@
  body {
-    background: linear-gradient(to bottom, #3e2f2f, #1e1e1e); /* nâu tối → đen xám */
+   background-image: url(../images/bg_doctruyen.jpg);
     color: #f0f0f0;
     font-family: 'Georgia', serif;
     line-height: 1.6;
