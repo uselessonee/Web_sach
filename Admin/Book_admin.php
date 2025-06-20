@@ -31,7 +31,6 @@ try {
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_book'])) {
         // Làm sạch và kiểm tra dữ liệu đầu vào từ form
         // Sử dụng FILTER_SANITIZE_URL kết hợp với htmlspecialchars cho hiển thị
-        // FILTER_SANITIZE_URL là tốt nhất cho URL
         $title = htmlspecialchars(trim(filter_input(INPUT_POST, 'title', FILTER_DEFAULT)), ENT_QUOTES, 'UTF-8');
         $author = htmlspecialchars(trim(filter_input(INPUT_POST, 'author', FILTER_DEFAULT)), ENT_QUOTES, 'UTF-8');
         $cover_image_url = filter_input(INPUT_POST, 'cover_image_url', FILTER_SANITIZE_URL);

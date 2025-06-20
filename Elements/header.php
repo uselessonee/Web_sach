@@ -10,16 +10,18 @@ $username = $_SESSION['username'] ?? 'Khách';
             <img src="./images/logo/book.png" alt="" width="60">
         </td>
         <td>
-            <a href="" class="logo"
+            <a href="#" class="logo"
                 style="font-size: 20px; font-weight: bold; text-decoration: none; color: black;">BOOK
                 ONLINE</a>
         </td>
     </tr>
 </table>
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<input type="checkbox" name="" id="thanhcuon">
+<label for="thanhcuon" class="fas fa-bars"></label>
 
 <div class="menu">
-    <a href="#trangchu">Trang Chủ</a>
+    <a href="./index.php">Trang Chủ</a>
 
     <div class="dropdown">
         <a href="#">Thể loại</a>
