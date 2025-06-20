@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sbmDNhap'])) {
                 // Lưu thông tin người dùng vào session
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['name'];
-                header('Location: ../index.php'); // Chuyển hướng đến trang chào mừng hoặc trang chính sau khi đăng nhập thành công
+                header('Location: ../Pages/index.php'); // Chuyển hướng đến trang chào mừng hoặc trang chính sau khi đăng nhập thành công
                 exit();
             } else {
                 $error_message = 'Tên đăng nhập hoặc mật khẩu không đúng.';

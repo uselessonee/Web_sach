@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Đọc sách online</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="icon" href="./images/book.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../images/book.png" type="image/x-icon">
 
 </head>
 
 <body>
   <header id="header-placeholder">
-    <?php include './Elements/header.php'; ?>
+    <?php include '../Elements/header.php'; ?>
   </header>
 
   <section class="trangchu" id="trangchu">
@@ -28,9 +28,9 @@
       <button class="prev">&#10094;</button>
 
       <div class="book-track">
-        <img src="./images/tatden.jpeg" alt="Sách 1">
-        <img src="./images/Trong Họa Có Phúc.jpeg" alt="Sách 2">
-        <img src="./images/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 3">
+        <img src="../images/tatden.jpeg" alt="Sách 1">
+        <img src="../images/Trong Họa Có Phúc.jpeg" alt="Sách 2">
+        <img src="../images/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 3">
       </div>
       <button class="next">&#10095;</button>
     </div>
@@ -71,9 +71,9 @@
   </div>
 </body>
 <footer id="footer-placeholder">
-  <?php include './Elements/footer.html'; ?>
+  <?php include '../Elements/footer.html'; ?>
 </footer>
 
-<script src="./js/Indexloader.js"></script>
+<script src="../js/Indexloader.js"></script>
 
 </html>

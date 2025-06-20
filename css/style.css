@@ -77,6 +77,10 @@ header .logo {
   display: none;
 }
 
+.fas {
+  display: none;
+}
+
 .fa-bars {
   font-size: 3rem;
   color: #333;
@@ -84,7 +88,7 @@ header .logo {
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  display: none;
+  display: none !important;
 }
 
 /* menu  thể loại*/
@@ -252,7 +256,7 @@ header .logo {
 
 @media (max-width: 768px) {
   .fa-bars {
-    display: block;
+    display: block !important;
   }
 
   .menu {

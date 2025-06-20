@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sbmDKy'])) {
 
             <div class="buttons">
                 <input type="submit" name="sbmDKy" value="Đăng ký" />
-                <a href="../index.php" class="button-link">Đăng nhập</a>
+                <a href="../Pages/index.php" class="button-link">Đăng nhập</a>
             </div>
         </form>
     </div>
