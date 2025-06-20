@@ -57,6 +57,7 @@ try {
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
             // Chuẩn bị và thực thi câu lệnh SQL INSERT
+            echo "Thêm người dùng mới: $name, $email"; // Debugging line
             $insertSQL = "
                 INSERT INTO users (name, email, password)
                 VALUES (:name, :email, :password)
@@ -71,7 +72,7 @@ try {
                 ]);
                 $message = 'Thêm người dùng thành công!';
                 $messageType = 'success';
-
+            
             } catch (PDOException $e) {
                 // Kiểm tra lỗi trùng email (unique)
                 if ($e->getCode() == '23000') { // Mã lỗi vi phạm unique của SQLite
@@ -214,7 +215,7 @@ try {
 
         <div>
             <h2 >Thêm người dùng mới</h2>
-            <form action="admin_users.php" method="POST">
+            <form action="User_admin.php" method="POST">
                 <div>
                     <label for="name">Tên <span>*</span></label>
                     <input type="text" id="name" name="name" required class="form-input" placeholder="Ví dụ: Rick ashley">

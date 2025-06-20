@@ -104,8 +104,6 @@ try {
     // Xử lý lỗi kết nối cơ sở dữ liệu
     $message = 'Lỗi kết nối cơ sở dữ liệu: ' . $e->getMessage();
     $messageType = 'error';
-    // Đây là nơi bạn nên ghi log lỗi chi tiết hơn và hiển thị một thông báo thân thiện với người dùng.
-    // Lỗi nghiêm trọng: Đây là một lỗi nghiêm trọng, ứng dụng không thể tiếp tục nếu không kết nối được DB.
 }
 
 ?>
@@ -220,7 +218,7 @@ try {
 
         <div>
             <h2>Thêm Sách Mới</h2>
-            <form action="admin_books.php" method="POST" >
+            <form action="Book_admin.php" method="POST" >
                 <div>
                     <label for="title" >Tiêu đề <span>*</span></label>
                     <input type="text" id="title" name="title" required class="form-input" placeholder="Ví dụ: Đắc nhân tâm">

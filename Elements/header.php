@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+// Kiểm tra xem người dùng đã đăng nhập chưa
+$username = $_SESSION['username'] ?? 'Khách';
+?>
 <table cellpadding="5">
     <tr>
         <td>
@@ -43,5 +49,5 @@
 </div>
 
 <div class="icons">
-    <a href="../Pages/Login.html" class="user"><img src="./images/logo/user.png" alt="user"></a>
+    <a href="../Pages/login.php" class="user"><img src="./images/logo/user.png" alt="user"></a>
 </div>
