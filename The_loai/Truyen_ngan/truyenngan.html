@@ -1,233 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Truyện ngắn - BOOK ONLINE</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-   <link rel="stylesheet" href="../../css/disign.css">
-   <!-- <style>
-      :root {
-         --nau: #996600;
-      }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Đọc sách online</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+ <link rel="stylesheet" href="../../css/The_loai.css">
 
-      * {
-         margin: 0;
-         padding: 0;
-         box-sizing: border-box;
-         font-family: Verdana, Geneva, Tahoma, sans-serif;
-         text-decoration: none;
-         transition: 0.2s linear;
-      }
-
-      body {
-         background-color: #1e1e1e;
-         color: #f0f0f0;
-      }
-
-      .header {
-         background-color: #09dda8;
-         padding: 1.5rem 5%;
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-      }
-
-      .logo {
-         font-size: 1rem;
-         font-weight: bold;
-         color: #000000;
-      }
-
-      .menu {
-         display: flex;
-         align-items: center;
-         gap: 1rem;
-         position: relative;
-      }
-
-      .menu a {
-   color: #f0f0f0; /* Màu chữ sáng hơn cho nền tối */
-   font-size: 1rem;
-   padding: 0.5rem 1rem;
-}
-
-.menu a:hover {
-   color: var(--nau);          /* Màu khi hover */
-   background-color: transparent; /* Loại bỏ nền trắng khi hover */
-}
-
-
-      .dropdown {
-         position: relative;
-      }
-
-      .dropdown-content {
-   display: none;
-   position: absolute;
-   top: 100%;
-   left: 50%;
-   transform: translateX(-50%);
-   background-color: #ffffff;
-   border: 1px solid #ccc;
-   padding: 0.5rem;
-   min-width: 180px;
-   z-index: 1000;
-   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-content table {
-   width: auto;
-   border-collapse: collapse;
-   font-size: 1.2rem;
-   text-align: left;
-}
-
-
-      .dropdown-content td {
-         padding: 0.5rem 1rem;
-         border-bottom: 1px solid #ddd;
-         cursor: pointer;
-         white-space: nowrap;
-      }
-
-      .dropdown-content td:hover {
-         background-color: #f0f0f0;
-         color: var(--nau);
-      }
-
-      .dropdown-content td a {
-         color: #2c2a2a;
-         display: block;
-      }
-
-      .dropdown:hover .dropdown-content {
-         display: block;
-      }
-
-      .icons a {
-         color: #333;
-         font-size: 2rem;
-         margin-left: 1.5rem;
-      }
-
-      .icons a:hover {
-         color: var(--nau);
-      }
-
-      .tour {
-         padding: 40px 10%;
-      }
-
-      .tt h1 {
-         text-align: center;
-         font-size: 4rem;
-         margin-bottom: 40px;
-       
-      }
-
-      .grid {
-         display: grid;
-         grid-template-columns: repeat(3, 1fr);
-         gap: 30px;
-      }
-
-      .box {
-         background-color: #ffffff;
-         border-radius: 8px;
-         overflow: hidden;
-         transition: transform 0.3s ease;
-         text-align: center;
-         box-shadow: 0 4px 8px rgba(253, 145, 22, 0.3);
-      }
-
-      .box:hover {
-         transform: scale(1.03);
-      }
-
-      .box img {
-         width: 100%;
-         height: 250px;
-         object-fit: cover;
-      }
-
-      .box h3 {
-         margin: 15px 0;
-         font-size: 2rem;
-         color: #000000;
-      }
-   </style> -->
 </head>
 
 <body>
-   <header class="header">
-      <a href="#" class="logo">BOOK ONLINE</a>
+  <header id="header-placeholder"></header>
 
-      <nav class="menu">
-         <a href="#trangchu">Trang Chủ</a>
+  <h1 class="tieude">TRUYỆN NGẮN</h1>
 
-       <div class="dropdown">
-  <a href="#">Thể loại</a>
-  <div class="dropdown-content">
-    <table>
-      <tr>
-        <td><a href="../The_loai/Truyen_ngan/truyenngan.html">Truyện ngắn</a></td>
-        <td><a href="#">Ngôn tình</a></td>
-        <td><a href="#">Tiểu thuyết</a></td>
-      </tr>
-      <tr>
-        <td><a href="#">Cổ tích</a></td>
-        <td><a href="#">Truyện 3D</a></td>
-        <td><a href="#">Kinh dị</a></td>
-      </tr>
-      <tr>
-        <td><a href="#">Hành động & Phiêu lưu</a></td>
-        <td><a href="#">Lịch sử</a></td>
-        <td><a href="#">Tâm lý</a></td>
-      </tr>
-    </table>
+<p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #fffdfd;">Đọc nhiều nhất</p>
+  <!--https://vi.wikipedia.org/wiki/Trang_Ch%C3%ADnh-->
+<div class="featured-books">
+  <div class="book-item">
+    <a href="../../doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Đat_rung_phuong_nam.jpg" alt="Sách 1"></a>
+    <a href="../../doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm:Đất rừng phương nam</div>
+        <div class="book-title">Tác giả: Đoàn Giỏi</div>
+         <div class="book-title">Năm xuất bản:1996</div>
+         
+         
+    </div>
+  </a>
+  </div>
+ 
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Vo_nhat.webp" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm:Vợ nhặt</div>
+        <div class="book-title">Tác giả: Kim Lân</div>
+         <div class="book-title">Năm xuất bản: 1954</div>
+         
+    </div>
+  </a>
+  </div>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Chi_Pheo.jpg" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm:Chí Phèo</div>
+        <div class="book-title">Tác giả: Nam Cao</div>
+         <div class="book-title">Năm xuất bản: 1941</div>
+          
+    </div>
+  </a>
+  </div>
+
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Lao_Hac.png" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm:Lão Hạc</div>
+        <div class="book-title">Tác giả: Nam Cao</div>
+         <div class="book-title">Năm xuất bản: 1943</div>
+          
+    </div>
+  </a>
+  </div>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Que_me.png" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm:Quê mẹ</div>
+        <div class="book-title">Tác giả: Thanh Tịnh</div>
+         <div class="book-title">Năm xuất bản: 1975</div>
+          
+    </div>
+  </a>
+  </div>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Đoi_mat.jpg" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Đôi mắt</div>
+        <div class="book-title">Tác giả: Nam Cao</div>
+         <div class="book-title">Năm xuất bản: 1941</div>
+          
+    </div>
+  </a>
   </div>
 </div>
 
+<p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #fffdfd;">Mới nhất</p>
+    <!--https://www.fahasa.com/tron-len-mai-nha-de-khoc-tang-kem-bookmark.html?fhs_campaign=CATEGORY-->
+<div class="featured-books">
+ <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Đam_tre_ơ_đai duong den.webp" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: ĐÁM TRẺ Ở ĐẠI DƯƠNG ĐEN - NHỮNG TIẾNG GỌI TUYỆT VỌNG GIỮA LÒNG ĐẠI DƯƠNG LẠNH</div>
+        <div class="book-title">Tác giả: Châu Sa Đáy Mắt</div>
+         <div class="book-title">Năm xuất bản: 2023</div>
+         
+    </div>
+  </a>
+  </div>
 
-         <a href="#Sách điện tử">Sách điện tử</a>
-         <a href="#Mua sắm">Mua sắm</a>
-      </nav>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Loi_noi_cua_thanh_xuan.webp" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Sayings Of Youth - Lời Nói Của Thanh Xuân</div>
+        <div class="book-title">Tác giả: Đào Hoàng Diệu</div>
+         <div class="book-title">Năm xuất bản: 2024</div>
+         
+    </div>
+  </a>
+  </div>
 
-      <div class="icons">
-         <a href="#" class="fas fa-user"></a>
-      </div>
-   </header>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Tron_len_may_nha_đe khoc.jpg" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Trốn lên máy nhà để khóc</div>
+        <div class="book-title">Tác giả: Lam</div>
+          <div class="book-title">Nhà xuất bản: Dân trí</div>
+         <div class="book-title">Năm xuất bản: 2024</div>
+         
+    </div>
+  </a>
+  </div>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Te_giac_trong_ngan xanh.webp" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm:Tê Giác Trong Ngàn Xanh( Tái xuất bản 2025)</div>
+        <div class="book-title">Tác giả: Đoàn Giỏi</div>
+         <div class="book-title">Năm xuất bản: 2025</div>
+          
+    </div>
+  </a>
+  </div>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Chem_theo_chieu_gio.jpg" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Chém Theo Chiều Gió</div>
+        <div class="book-title">Tác giả: Peter Pho</div>
+         <div class="book-title">Năm xuất bản: 2025</div>
+          
+    </div>
+  </a>
+  </div>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Cung_chame_gia_di.webp" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Cùng cha mẹ già đi</div>
+        <div class="book-title">Tác giả: Tất Khiếu Nam</div>
+         <div class="book-title">Năm xuất bản: 2024</div>
+          
+    </div>
+  </a>
+  </div>
+</div>
 
-   <main class="tour">
-      <div class="tt">
-         <h1>TRUYỆN NGẮN</h1>
-      </div>
-
-      <section class="grid">
-         <div class="box">
-            <a href="tobicauluaroi.html">
-               <img src="images/Tớ bị cậu lừa rồi!.jpg" alt="Tớ bị cậu lừa rồi!">
-               <h3><span>Tớ bị cậu lừa rồi!</span></h3>
-            </a>
-         </div>
-         <div class="box">
-            <a href="xomgo.html">
-               <img src="images/Xóm Gò.jpg" alt="Xóm Gò">
-               <h3><span>Xóm Gò</span></h3>
-            </a>
-         </div>
-         <div class="box">
-            <a href="diquamuagiothoi.html">
-               <img src="images/Đi qua mùa gió thổi.jpg" alt="Đi qua gió mùa thổi">
-               <h3><span>Đi qua gió mùa thổi</span></h3>
-            </a>
-         </div>
-      </section>
-   </main>
-
-   <script src="../js/scrip.js"></script>
 </body>
+<footer id="footer-placeholder"></footer>
+
+<!-- Load header và footer từ external file -->
+<script>
+  fetch('../../Elements/header.html') // đường dẫn đến file header.html
+    .then(response => response.text()) // đổi response sang text để lấy nội dung HTML
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading header:', error)); // xử lý lỗi nếu có
+
+  // Load footer from external file
+  fetch('../../Elements/footer.html') // đường dẫn đến file footer.html
+    .then(response => response.text()) // đổi response sang text để lấy nội dung HTML
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading footer:', error)); // xử lý lỗi nếu có
+</script>
+
 </html>
