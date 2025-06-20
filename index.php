@@ -13,7 +13,7 @@
 
 <body>
   <header id="header-placeholder">
-    <?php include './Elements/header.html'; ?>
+    <?php include './Elements/header.php'; ?>
   </header>
 
   <section class="trangchu" id="trangchu">
