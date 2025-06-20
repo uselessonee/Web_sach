@@ -212,13 +212,12 @@ header .logo {
   }
 }
 
-/* Footer Styles */
 footer {
   background-color: #be870e;
   padding: 40px 20px;
   font-family: Arial, sans-serif;
   margin-top: 50px;
-  /* Adds some space above the footer */
+  
 }
 
 .footer-content {
@@ -239,7 +238,7 @@ footer {
   color: #000000;
   margin-bottom: 20px;
   font-size: 1.8rem;
-  border-bottom: 2px solid #a1720d;
+  border-bottom: 2px solid #644604;
   padding-bottom: 10px;
   display: inline-block;
 }
@@ -299,7 +298,6 @@ footer {
   color: #000000;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -327,7 +325,7 @@ footer {
   text-align: center;
   font-size: 3rem;
   margin-top: 9rem; 
-  color: #fcc100;
+  color: #ecd135;
   font-weight: bold;
 }
 .featured-books {
@@ -368,11 +366,11 @@ footer {
 .book-title {
   font-size: 10px;
   font-weight: bold;
-  color: #333;
+  color: #000000;
 }
 
   body {
-    background: linear-gradient(to bottom, #744848, #271616);
+    background: linear-gradient(to bottom, #0a0a0a, #000000);
     color: #f0f0f0;
     font-family: 'Georgia', serif;
     line-height: 1.6;
