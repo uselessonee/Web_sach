@@ -69,6 +69,7 @@
   <div class="featured-books" id="latestBooksContainer">
 
   </div>
+  
 </body>
 <footer id="footer-placeholder">
   <?php include '../Elements/footer.html'; ?>
