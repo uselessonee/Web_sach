@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Đọc sách online</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+ <link rel="stylesheet" href="../../css/The_loai.css">
+
+</head>
+
+<body>
+  <header id="header-placeholder"></header>
+
+  <h1 class="tieude"></h1>
+
+<p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #fffdfd;">Đọc nhiều nhất</p>
+  <!--https://vi.wikipedia.org/wiki/Trang_Ch%C3%ADnh-->
+<div class="featured-books">
+  <div class="book-item">
+    <a href="../../doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/tatden.jpeg" alt="Sách 1"></a>
+    <a href="../../doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm:Tắt đèn</div>
+        <div class="book-title">Tác giả: Ngô Tất Tố</div>
+         <div class="book-title">Năm xuất bản: 1939</div>
+          <div class="book-title">Thể loại: tiểu thuyết</div>
+           <div class="book-title">1k lượt thích</div>
+    </div>
+  </a>
+  </div>
+ 
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/So_do.jpg" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Số Đỏ</div>
+        <div class="book-title">Tác giả: Vũ Trọng Phụng</div>
+         <div class="book-title">Năm xuất bản: 1938</div>
+         
+    </div>
+  </a>
+  </div>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Tiếng chim hót trong bụi mận gai</div>
+        <div class="book-title">Tác giả: Colleen McCullough</div>
+         <div class="book-title">Năm xuất bản: 1977</div>
+         
+    </div>
+  </a>
+  </div>
+
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/De_men_phieu_luu_ki.jpg" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Dế Mèn Phiêu Lưu Kí</div>
+        <div class="book-title">Tác giả: Tô Hoài</div>
+         <div class="book-title">Năm xuất bản: 1941</div>
+        
+    </div>
+  </a>
+  </div>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Manh_dat_lam_nguoi_nhieu_ma.jpg" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Mãnh đất lắm người nhiều ma</div>
+        <div class="book-title">Tác giả: Nguyễn Khắc Trường </div>
+         <div class="book-title">Năm xuất bản: 1990</div>
+          
+    </div>
+  </a>
+  </div>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Noi_buon_chien_tranh.jpg" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Nỗi buôn chiến tranh</div>
+        <div class="book-title">Tác giả: Bảo Ninh</div>
+         <div class="book-title">Năm xuất bản: 1990</div>
+          
+    </div>
+  </a>
+  </div>
+</div>
+
+<p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #fffdfd;">Mới nhất</p>
+    <!--https://www.fahasa.com/tron-len-mai-nha-de-khoc-tang-kem-bookmark.html?fhs_campaign=CATEGORY-->
+<div class="featured-books">
+ <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Doraemon.webp" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Nobita Và Cuộc Phiêu Lưu Vào Thế Giới Trong Tranh</div>
+        <div class="book-title">Tác giả: Fujiko F Fujio, Satoshi Ito, Yukiyo Teramoto</div>
+         <div class="book-title">Người dịch: Thu Hằng</div>
+          <div class="book-title">Năm xuất bản: 2025</div>
+         
+         
+    </div>
+  </a>
+  </div>
+
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Doraemon_Ban_giao_hương_dia_cau.webp" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Doraemon-Bản giao hưởng địa cầu</div>
+        <div class="book-title">Tác giả: Fujiko F Fujio , Teruko Utsumi, Kazuaki Imai</div>
+         <div class="book-title">Năm xuất bản: 2024</div>
+          
+    </div>
+  </a>
+  </div>
+
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Cho_toi_mot_ve_di_tuoi_tho.webp" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm: Cho tôi một vé đi tuổi thơ</div>
+        <div class="book-title">Tác giả: Nguyễn Nhật Ánh</div>
+         <div class="book-title">Năm xuất bản: 2023</div>
+          
+    </div>
+  </a>
+  </div>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Thuyen.webp" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm:Thuyền</div>
+        <div class="book-title">Tác giả: Nguyễn  Đức Tùng</div>
+         <div class="book-title">Năm xuất bản: 2025</div>
+          
+    </div>
+  </a>
+  </div>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Anne_toc_do_duoi_chai_nha_xanh.webp" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+         <div class="book-title">Tác phẩm:Anne Tóc Đỏ Dưới Chái Nhà Xanh (Tái Bản 2024)</div>
+      <div class="book-title">Tác giả:	Lucy Maud Montgomery</div>
+     
+         <div class="book-title">Năm xuất bản: 2024</div>
+          
+    </div>
+  </a>
+  </div>
+  <div class="book-item">
+    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Cung_chame_gia_di.webp" alt="Sách 1"></a>
+    <a href="./doctruyen/Tat_den.html"><div class="book-info">
+      <div class="book-title">Tác phẩm:Thám Tử Lừng Danh Conan - Tiểu Thuyết - Ngôi Sao 5 Cánh 1 Triệu Đô</div>
+        <div class="book-title">Tác giả: Gosho Aoyama, Takahiro Okura, Shima Mizuki</div>
+         <div class="book-title">Người dịch: Thu Hằng</div>
+         <div class="book-title">Năm xuất bản: 2024</div>
+          
+    </div>
+  </a>
+  </div>
+</div>
+
+</body>
+<footer id="footer-placeholder"></footer>
+
+<!-- Load header và footer từ external file -->
+<script>
+  fetch('../../Elements/header.html') // đường dẫn đến file header.html
+    .then(response => response.text()) // đổi response sang text để lấy nội dung HTML
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading header:', error)); // xử lý lỗi nếu có
+
+  // Load footer from external file
+  fetch('../../Elements/footer.html') // đường dẫn đến file footer.html
+    .then(response => response.text()) // đổi response sang text để lấy nội dung HTML
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading footer:', error)); // xử lý lỗi nếu có
+</script>
+
+</html>
