@@ -1,5 +1,5 @@
  body {
-   background-image: url(../images/bg_doctruyen.jpg);
+   background-color:  #ffffff;
     color: #f0f0f0;
     font-family: 'Georgia', serif;
     line-height: 1.6;
@@ -41,12 +41,12 @@
   .book-title {
     font-size: 26px;
     font-weight: bold;
-    color: #ffe4b5;
+    color: #04153a;
   }
 
   .book-author {
     font-size: 18px;
-    color: #d8d8d8;
+    color: #000000;
   }
 
   .read-icon {
@@ -67,7 +67,7 @@
 
   p {
     font-size: 16px;
-    color: #f0f0f0;
+    color: #0a0a0a;
   }
 
   .book-right h2 {
