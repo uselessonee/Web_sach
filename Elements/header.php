@@ -49,8 +49,7 @@ $username = $_SESSION['username'] ?? 'Khách';
         </div>
     </div>
 
-    <a href="#Sách điện tử">Sách điện tử</a>
-    <a href="#Mua sắm">Về chúng tôi</a>
+    <a href="../Pages/aboutus.php">Về chúng tôi</a>
 </div>
 
 <div class="icons">
@@ -59,13 +58,34 @@ $username = $_SESSION['username'] ?? 'Khách';
             </a>
             <div class="dropdown-content">
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <a href="#">Trang cá nhân</a> 
-                    <a href="logout.php">Đăng xuất</a>
+                    <a href="#"><?php echo $username?></a> 
+                    <a href="../Elements/logout.php">Đăng xuất</a>
                 <?php else: ?>
-                    <a href="index.php">Đăng nhập</a>
-                    <a href="register.php">Đăng ký</a>
+                    <a href="../Pages/login.php">Đăng nhập</a>
+                    <a href="../Pages/Register.php">Đăng ký</a>
                 <?php endif; ?>
         </div>
     </div>
 </div>
-<script src="../js/Indexloader.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const userIconLink = document.querySelector('.icons .user');
+    const iconsContainer = document.querySelector('.icons');
+
+    if (userIconLink && iconsContainer) {
+        // Prevent default link behavior and toggle dropdown
+        userIconLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Stop the default navigation of the <a> tag
+            iconsContainer.classList.toggle('active'); // Toggle the 'active' class
+        });
+
+        // Close the dropdown if the user clicks outside of it
+        document.addEventListener('click', function(event) {
+            // Check if the click was outside the icons container
+            if (!iconsContainer.contains(event.target)) {
+                iconsContainer.classList.remove('active'); // Remove 'active' class
+            }
+        });
+    }
+});
+</script>
