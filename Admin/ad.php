@@ -1,34 +1,25 @@
 <?php
 
-// Database connection path
-$databaseFile = '../DB/Database.db'; // Ensure this path is correct
+$databaseFile = '../DB/Database.db'; 
 
-$message = ''; // To store messages for the user
+$message = ''; 
 
 try {
-    // Connect to SQLite database using PDO
     $pdo = new PDO("sqlite:$databaseFile");
-    // Set errormode to exceptions
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // Set default fetch mode to associative array
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    // --- Handle form submission for updating genres ---
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['genres'])) {
         $genresToUpdate = $_POST['genres'];
         $updatedCount = 0;
 
-        $pdo->beginTransaction(); // Start a transaction for atomicity
-
+        $pdo->beginTransaction(); 
         try {
             $stmt = $pdo->prepare("UPDATE books SET genre = :genre WHERE id = :id");
 
             foreach ($genresToUpdate as $bookId => $genreValue) {
-                // Trim whitespace from the genre value
                 $cleanedGenre = trim($genreValue);
 
-                // Check if the genre has actually changed to avoid unnecessary updates
-                // (Optional, you could fetch current genre first, but for bulk update, this is fine)
                 $stmt->bindValue(':genre', $cleanedGenre, PDO::PARAM_STR);
                 $stmt->bindValue(':id', $bookId, PDO::PARAM_INT);
                 $stmt->execute();
@@ -38,23 +29,21 @@ try {
                 }
             }
 
-            $pdo->commit(); // Commit the transaction
+            $pdo->commit(); 
             $message = "<div class='success-message'>Successfully updated $updatedCount genre(s)!</div>";
 
         } catch (Exception $e) {
-            $pdo->rollBack(); // Rollback on error
+            $pdo->rollBack();
             $message = "<div class='error-message'>Error updating genres: " . $e->getMessage() . "</div>";
         }
     }
-
-    // --- Fetch all books to display ---
     $stmt = $pdo->query("SELECT id, title, author, genre FROM books ORDER BY title ASC");
     $books = $stmt->fetchAll();
 
 } catch (PDOException $e) {
-    // Handle database connection errors
+
     $message = "<div class='error-message'>Database error: " . $e->getMessage() . "<br>Please ensure 'books.sqlite' exists and is writable.</div>";
-    $books = []; // Ensure $books is an empty array if connection fails
+    $books = []; 
 }
 
 ?>

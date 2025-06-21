@@ -1,10 +1,10 @@
 <?php
 
-// --- Cấu hình ---
+// 死にたいああああああああああああああああああああああああああああああああああああああああああああ
 $databaseFile = '../DB/Database.db';
 $uploadDirectory = 'uploads/book_covers/'; // Thư mục để lưu ảnh bìa
 
-// Biến cho thông báo (sẽ hiển thị trên UI)
+// Biến cho thông báo (sẽ hiển thị trên UI)　死にたいああああああああああああああああああああああああああああああああああああああああああああ
 $message = '';
 $messageType = ''; // 'success' (thành công) hoặc 'error' (lỗi)
 
@@ -13,7 +13,7 @@ if (!is_dir($uploadDirectory)) {
     mkdir($uploadDirectory, 0777, true);
 }
 
-// --- Kết nối Cơ sở dữ liệu ---
+// --- Kết nối Cơ sở dữ liệu ---　俺を殺せ！！！！！！！！！！
 try {
     $pdo = new PDO("sqlite:" . $databaseFile);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Bật ngoại lệ cho lỗi

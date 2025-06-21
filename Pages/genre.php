@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <header id="header-placeholder"></header>
+<?php include '../Elements/header.php'; ?>
 
   <h1 class="tieude"></h1>
 
@@ -156,24 +156,38 @@
 </div>
 
 </body>
-<footer id="footer-placeholder"></footer>
+<?php include '../Elements/footer.html'; ?>
 
-<!-- Load header và footer từ external file -->
-<script>
-  fetch('../../Elements/header.html') // đường dẫn đến file header.html
-    .then(response => response.text()) // đổi response sang text để lấy nội dung HTML
-    .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
-    })
-    .catch(error => console.error('Error loading header:', error)); // xử lý lỗi nếu có
-
-  // Load footer from external file
-  fetch('../../Elements/footer.html') // đường dẫn đến file footer.html
-    .then(response => response.text()) // đổi response sang text để lấy nội dung HTML
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    })
-    .catch(error => console.error('Error loading footer:', error)); // xử lý lỗi nếu có
-</script>
+<script> 
+// Lấy giá trị của biến 'title' từ URL 
+    const urlParams = new URLSearchParams(window.location.search); 
+    const titleParam = urlParams.get('title'); // Lấy phần tử <h1> có class "tieude"
+    const headingElement = document.querySelector('.tieude'); // Kiểm tra nếu có titleParam và headingElement tồn tại 
+    if (titleParam && headingElement) 
+    {
+        let displayText = ''; // Chuyển đổi titleParam thành tiêu đề hiển thị phù hợp 
+        switch (titleParam) 
+        { 
+            case 'ngontinh': displayText = 'Sách Ngôn Tình'; break; 
+            case 'tieuthuyet': displayText = 'Sách Tiểu Thuyết'; break; 
+            case 'kinhdi': displayText = 'Sách Kinh Dị'; break; 
+            case 'hanhdongphieuluu': displayText = 'Sách Hành Động & Phiêu Lưu'; break; 
+            case 'truyen3d': displayText = 'Sách Truyện 3D'; break; 
+            case 'truyenngan': displayText = 'Sách Truyện Ngắn'; break; 
+            case 'lichsu': displayText = 'Sách Lịch Sử'; break; 
+            case 'tamly': displayText = 'Sách Tâm Lý'; break; 
+            case 'cotich': displayText = 'Sách Cổ Tích'; break; 
+            default: displayText = 'Thể Loại Sách'; // Tiêu đề mặc định nếu không khớp 
+            break; 
+        } 
+            headingElement.textContent = displayText; 
+            // Đặt tiêu đề của trang (trong thẻ <title>) 
+            document.title = displayText + " - Đọc sách online"; 
+    } 
+    else if (headingElement) { // Nếu không có titleParam, đặt tiêu đề mặc định và tiêu đề trang 
+        headingElement.textContent = 'Thể Loại Sách'; 
+        document.title = 'Thể Loại Sách - Đọc sách online'; 
+    } 
+    </script>
 
 </html>
