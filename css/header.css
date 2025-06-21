@@ -29,6 +29,7 @@ header .logo {
     font-size: 2rem;
     color: #333;
     padding: 0 1.5rem;
+    text-decoration: none !important;
 }
 
 .menu a:hover {
