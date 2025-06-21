@@ -8,6 +8,7 @@
   <title> Đọc sách online</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
  <link rel="stylesheet" href="../../css/The_loai.css">
+ <link rel="icon" href="../images/book.png" type="image/x-icon">
 
 </head>
  <header><?php include '../Elements/header.php'; ?></header>

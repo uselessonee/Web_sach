@@ -61,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sbmDKy'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang đăng ký</title>
     <link rel="stylesheet" href="../css/Login.css" /> 
+    <link rel="icon" href="../images/book.png" type="image/x-icon">
 </head>
 <body>
     <div class="background"></div>
