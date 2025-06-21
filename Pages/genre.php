@@ -10,184 +10,88 @@
  <link rel="stylesheet" href="../../css/The_loai.css">
 
 </head>
+ <header><?php include '../Elements/header.php'; ?></header>
+<body style="padding-top: 2rem;">
+ <?php  require_once '../Elements/connect.php';
 
-<body>
-<?php include '../Elements/header.php'; ?>
+    $pdo = connect_db();
 
-  <h1 class="tieude"></h1>
+    // Lấy giá trị 'title' từ URL
+    $genre_param = isset($_GET['title']) ? $_GET['title'] : '';
+
+    $display_title = 'Thể Loại Sách'; // Tiêu đề mặc định
+    $sql_genre = ''; // Biến để lưu thể loại dùng trong câu truy vấn SQL...nhưng vô dụng và chưa biết làm gì hết
+
+    // map tham số URL với tên hiển thị và giá trị genre trong DB
+    $genre_mapping = [
+        'ngontinh' => ['Sách Ngôn Tình', 'Ngôn Tình'],
+        'tieuthuyet' => ['Sách Tiểu Thuyết', 'Tiểu Thuyết'],
+        'kinhdi' => ['Sách Kinh Dị', 'Kinh Dị'],
+        'hdpl' => ['Sách Hành Động & Phiêu Lưu', 'Hành Động,Phiêu Lưu'], // Giả sử genre có thể là nhiều giá trị cách nhau bằng dấu phẩy
+        'truyen3d' => ['Sách Truyện 3D', 'Truyện 3D'],
+        'truyenngan' => ['Sách Truyện Ngắn', 'Truyện Ngắn'],
+        'lichsu' => ['Sách Lịch Sử', 'Lịch Sử'],
+        'tamly' => ['Sách Tâm Lý', 'Tâm Lý'],
+        'cotich' => ['Sách Cổ Tích', 'Cổ Tích'],
+    ];
+
+    if (isset($genre_mapping[$genre_param])) {
+        $display_title = $genre_mapping[$genre_param][0];
+        $sql_genre = $genre_mapping[$genre_param][1];
+    }
+
+    // Cập nhật tiêu đề trang
+    echo "<script>document.title = '" . $display_title . " - Đọc sách online';</script>";
+    ?>
+    <!-- hiển thị tiêu đề -->
+    <h1 class="tieude"><?php echo $display_title; ?></h1>
 
 <p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #fffdfd;">Đọc nhiều nhất</p>
-  <!--https://vi.wikipedia.org/wiki/Trang_Ch%C3%ADnh-->
-<div class="featured-books">
-  <div class="book-item">
-    <a href="../../doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/tatden.jpeg" alt="Sách 1"></a>
-    <a href="../../doctruyen/Tat_den.html"><div class="book-info">
-      <div class="book-title">Tác phẩm:Tắt đèn</div>
-        <div class="book-title">Tác giả: Ngô Tất Tố</div>
-         <div class="book-title">Năm xuất bản: 1939</div>
-          <div class="book-title">Thể loại: tiểu thuyết</div>
-           <div class="book-title">1k lượt thích</div>
-    </div>
-  </a>
-  </div>
+ <div class="featured-books">
+        <?php
+        $books = [];
+        if (!empty($genre_param)) {
+            // Chuẩn bị câu truy vấn SQL với LIMIT 8
+            // ORDER BY id DESC để lấy các cuốn mới nhất (hoặc theo tiêu chí khác nếu bạn có)
+            $stmt = $pdo->prepare("SELECT * FROM books WHERE genre LIKE :genre_pattern ORDER BY id DESC LIMIT 8");
+            $stmt->bindValue(':genre_pattern', '%' . $genre_param . '%'); // Tìm kiếm genre chứa chuỗi
+            $stmt->execute();
+            $books = $stmt->fetchAll();
+        }
+
+        if (count($books) > 0) {
+            foreach ($books as $book) {
+                ?>
+                <div class="book-item">
+                    <a href="<?php echo htmlspecialchars($book['read_link']); ?>">
+                                <?php if (!empty($book['cover_image_url'])): ?>
+                          <img src="../Admin/<?php echo htmlspecialchars($book['cover_image_url']); ?>" alt="Ảnh bìa" >
+                            <?php else: ?>
+                                            <img src="https://placehold.co/64x80/cccccc/333333?text=Không+Ảnh" alt="Không Ảnh" title="Không Ảnh Bìa">
+                                        <?php endif; ?>
+              
+                    </a>
+                    <a href="<?php echo htmlspecialchars($book['read_link']); ?>">
+                        <div class="book-info">
+                            <div class="book-title">Tác phẩm: <?php echo htmlspecialchars($book['title']); ?></div>
+                            <div class="book-title">Tác giả: <?php echo htmlspecialchars($book['author']); ?></div>
+                            <div class="book-title">Năm xuất bản: <?php echo htmlspecialchars($book['published_date']); ?></div>
+                            <div class="book-title">Thể loại: <?php echo htmlspecialchars($book['genre']); ?></div>
+                            </div>
+                    </a>
+                </div>
+                <?php
+            }
+        } else {
+            echo "<p style='font-size: 2rem; margin-left: 5rem; color: #ccc;'>Không tìm thấy sách nào cho thể loại này.</p>";
+        }
+        ?>
  
-  <div class="book-item">
-    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/So_do.jpg" alt="Sách 1"></a>
-    <a href="./doctruyen/Tat_den.html"><div class="book-info">
-      <div class="book-title">Tác phẩm: Số Đỏ</div>
-        <div class="book-title">Tác giả: Vũ Trọng Phụng</div>
-         <div class="book-title">Năm xuất bản: 1938</div>
-         
-    </div>
-  </a>
-  </div>
-  <div class="book-item">
-    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Tiếng Chim Hót Trong Bụi Mận Gai.jpg" alt="Sách 1"></a>
-    <a href="./doctruyen/Tat_den.html"><div class="book-info">
-      <div class="book-title">Tác phẩm: Tiếng chim hót trong bụi mận gai</div>
-        <div class="book-title">Tác giả: Colleen McCullough</div>
-         <div class="book-title">Năm xuất bản: 1977</div>
-         
-    </div>
-  </a>
-  </div>
-
-  <div class="book-item">
-    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/De_men_phieu_luu_ki.jpg" alt="Sách 1"></a>
-    <a href="./doctruyen/Tat_den.html"><div class="book-info">
-      <div class="book-title">Tác phẩm: Dế Mèn Phiêu Lưu Kí</div>
-        <div class="book-title">Tác giả: Tô Hoài</div>
-         <div class="book-title">Năm xuất bản: 1941</div>
-        
-    </div>
-  </a>
-  </div>
-  <div class="book-item">
-    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Manh_dat_lam_nguoi_nhieu_ma.jpg" alt="Sách 1"></a>
-    <a href="./doctruyen/Tat_den.html"><div class="book-info">
-      <div class="book-title">Tác phẩm: Mãnh đất lắm người nhiều ma</div>
-        <div class="book-title">Tác giả: Nguyễn Khắc Trường </div>
-         <div class="book-title">Năm xuất bản: 1990</div>
-          
-    </div>
-  </a>
-  </div>
-  <div class="book-item">
-    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Noi_buon_chien_tranh.jpg" alt="Sách 1"></a>
-    <a href="./doctruyen/Tat_den.html"><div class="book-info">
-      <div class="book-title">Tác phẩm: Nỗi buôn chiến tranh</div>
-        <div class="book-title">Tác giả: Bảo Ninh</div>
-         <div class="book-title">Năm xuất bản: 1990</div>
-          
-    </div>
-  </a>
-  </div>
 </div>
 
-<p style="font-size: 2.5rem; margin-left: 5rem; font-weight: bold; color: #fffdfd;">Mới nhất</p>
-    <!--https://www.fahasa.com/tron-len-mai-nha-de-khoc-tang-kem-bookmark.html?fhs_campaign=CATEGORY-->
-<div class="featured-books">
- <div class="book-item">
-    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Doraemon.webp" alt="Sách 1"></a>
-    <a href="./doctruyen/Tat_den.html"><div class="book-info">
-      <div class="book-title">Tác phẩm: Nobita Và Cuộc Phiêu Lưu Vào Thế Giới Trong Tranh</div>
-        <div class="book-title">Tác giả: Fujiko F Fujio, Satoshi Ito, Yukiyo Teramoto</div>
-         <div class="book-title">Người dịch: Thu Hằng</div>
-          <div class="book-title">Năm xuất bản: 2025</div>
-         
-         
-    </div>
-  </a>
-  </div>
-
-  <div class="book-item">
-    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Doraemon_Ban_giao_hương_dia_cau.webp" alt="Sách 1"></a>
-    <a href="./doctruyen/Tat_den.html"><div class="book-info">
-      <div class="book-title">Tác phẩm: Doraemon-Bản giao hưởng địa cầu</div>
-        <div class="book-title">Tác giả: Fujiko F Fujio , Teruko Utsumi, Kazuaki Imai</div>
-         <div class="book-title">Năm xuất bản: 2024</div>
-          
-    </div>
-  </a>
-  </div>
-
-  <div class="book-item">
-    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Cho_toi_mot_ve_di_tuoi_tho.webp" alt="Sách 1"></a>
-    <a href="./doctruyen/Tat_den.html"><div class="book-info">
-      <div class="book-title">Tác phẩm: Cho tôi một vé đi tuổi thơ</div>
-        <div class="book-title">Tác giả: Nguyễn Nhật Ánh</div>
-         <div class="book-title">Năm xuất bản: 2023</div>
-          
-    </div>
-  </a>
-  </div>
-  <div class="book-item">
-    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Thuyen.webp" alt="Sách 1"></a>
-    <a href="./doctruyen/Tat_den.html"><div class="book-info">
-      <div class="book-title">Tác phẩm:Thuyền</div>
-        <div class="book-title">Tác giả: Nguyễn  Đức Tùng</div>
-         <div class="book-title">Năm xuất bản: 2025</div>
-          
-    </div>
-  </a>
-  </div>
-  <div class="book-item">
-    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TieuThuyet/Anne_toc_do_duoi_chai_nha_xanh.webp" alt="Sách 1"></a>
-    <a href="./doctruyen/Tat_den.html"><div class="book-info">
-         <div class="book-title">Tác phẩm:Anne Tóc Đỏ Dưới Chái Nhà Xanh (Tái Bản 2024)</div>
-      <div class="book-title">Tác giả:	Lucy Maud Montgomery</div>
-     
-         <div class="book-title">Năm xuất bản: 2024</div>
-          
-    </div>
-  </a>
-  </div>
-  <div class="book-item">
-    <a href="./doctruyen/Tat_den.html"><img src="../../images/img_TruyenNgan/Cung_chame_gia_di.webp" alt="Sách 1"></a>
-    <a href="./doctruyen/Tat_den.html"><div class="book-info">
-      <div class="book-title">Tác phẩm:Thám Tử Lừng Danh Conan - Tiểu Thuyết - Ngôi Sao 5 Cánh 1 Triệu Đô</div>
-        <div class="book-title">Tác giả: Gosho Aoyama, Takahiro Okura, Shima Mizuki</div>
-         <div class="book-title">Người dịch: Thu Hằng</div>
-         <div class="book-title">Năm xuất bản: 2024</div>
-          
-    </div>
-  </a>
-  </div>
-</div>
 
 </body>
-<?php include '../Elements/footer.html'; ?>
+<footer><?php include '../Elements/footer.html'; ?></footer>
 
-<script> 
-// Lấy giá trị của biến 'title' từ URL 
-    const urlParams = new URLSearchParams(window.location.search); 
-    const titleParam = urlParams.get('title'); // Lấy phần tử <h1> có class "tieude"
-    const headingElement = document.querySelector('.tieude'); // Kiểm tra nếu có titleParam và headingElement tồn tại 
-    if (titleParam && headingElement) 
-    {
-        let displayText = ''; // Chuyển đổi titleParam thành tiêu đề hiển thị phù hợp 
-        switch (titleParam) 
-        { 
-            case 'ngontinh': displayText = 'Sách Ngôn Tình'; break; 
-            case 'tieuthuyet': displayText = 'Sách Tiểu Thuyết'; break; 
-            case 'kinhdi': displayText = 'Sách Kinh Dị'; break; 
-            case 'hanhdongphieuluu': displayText = 'Sách Hành Động & Phiêu Lưu'; break; 
-            case 'truyen3d': displayText = 'Sách Truyện 3D'; break; 
-            case 'truyenngan': displayText = 'Sách Truyện Ngắn'; break; 
-            case 'lichsu': displayText = 'Sách Lịch Sử'; break; 
-            case 'tamly': displayText = 'Sách Tâm Lý'; break; 
-            case 'cotich': displayText = 'Sách Cổ Tích'; break; 
-            default: displayText = 'Thể Loại Sách'; // Tiêu đề mặc định nếu không khớp 
-            break; 
-        } 
-            headingElement.textContent = displayText; 
-            // Đặt tiêu đề của trang (trong thẻ <title>) 
-            document.title = displayText + " - Đọc sách online"; 
-    } 
-    else if (headingElement) { // Nếu không có titleParam, đặt tiêu đề mặc định và tiêu đề trang 
-        headingElement.textContent = 'Thể Loại Sách'; 
-        document.title = 'Thể Loại Sách - Đọc sách online'; 
-    } 
-    </script>
 
 </html>

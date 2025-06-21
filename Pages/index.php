@@ -75,6 +75,4 @@
   <?php include '../Elements/footer.html'; ?>
 </footer>
 
-<script src="../js/Indexloader.js"></script>
-
 </html>

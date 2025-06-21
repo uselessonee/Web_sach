@@ -31,19 +31,19 @@ $username = $_SESSION['username'] ?? 'Khách';
         <div class="dropdown-content">
             <table>
                 <tr>
-                    <td><a href="../The_loai/Truyen_ngan/truyenngan.html">Truyện ngắn</a></td>
-                    <td><a href="">Ngôn tình</a></td>
-                    <td><a href="../The_loai/Tieu_thuyet/tieuthuyet.html">Tiểu thuyết</a></td>
+                    <td><a href="../Pages/genre.php?title=truyenngan">Truyện ngắn</a></td>
+                    <td><a href="../Pages/genre.php?title=ngontinh">Ngôn tình</a></td>
+                    <td><a href="../Pages/genre.php?title=tieuthuyet">Tiểu thuyết</a></td>
                 </tr>
                 <tr>
-                    <td><a href="">Cổ tích</a></td>
-                    <td><a href="">Truyện 3D</a></td>
-                    <td><a href="">Kinh dị</a></td>
+                    <td><a href="../Pages/genre.php?title=cotich">Cổ tích</a></td>
+                    <td><a href="../Pages/genre.php?title=truyen3d">Truyện 3D</a></td>
+                    <td><a href="../Pages/genre.php?title=kinddi">Kinh dị</a></td>
                 </tr>
                 <tr>
-                    <td><a href="">Hành động & phiêu lưu</a></td>
-                    <td><a href="">Lịch sử</a></td>
-                    <td><a href="">Tâm lý</a></td>
+                    <td><a href="../Pages/genre.php?title=HDPL">Hành động & phiêu lưu</a></td>
+                    <td><a href="../Pages/genre.php?title=líchu">Lịch sử</a></td>
+                    <td><a href="../Pages/genre.php?title=tamly">Tâm lý</a></td>
                 </tr>
             </table>
         </div>
