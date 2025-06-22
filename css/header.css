@@ -169,3 +169,30 @@ header .logo {
 .icons.active .dropdown-content {
     display: block;
 }
+
+
+@media (max-width: 768px) {
+    .fa-bars {
+        display: block !important;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #eee;
+        flex-direction: column;
+        display: none;
+    }
+
+    #thanhcuon:checked~.menu {
+        display: flex;
+    }
+
+    .menu a {
+        padding: 1.5rem;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
