@@ -143,10 +143,10 @@
             foreach ($latest_books as $book) {
                 ?>
                 <div class="book-item">
-                    <a href="<?php echo htmlspecialchars($book['read_link']); ?>">
+                    <a href="../Pages/Read.php?id=<?php echo htmlspecialchars($book['id']); ?>">
                         <img src="../Admin/<?php echo htmlspecialchars($book['cover_image_url']); ?>" alt="<?php echo htmlspecialchars($book['title']); ?>">
                     </a>
-                    <a href="<?php echo htmlspecialchars($book['read_link']); ?>">
+                    <a href="../Pages/Read.php?id=<?php echo htmlspecialchars($book['id']); ?>">
                         <div class="book-info">
                             <div class="book-title">Tác phẩm: <?php echo htmlspecialchars($book['title']); ?></div>
                             <div class="book-title">Tác giả: <?php echo htmlspecialchars($book['author']); ?></div>
