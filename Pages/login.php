@@ -15,16 +15,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sbmDNhap'])) {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Chuẩn bị và thực thi truy vấn để lấy thông tin người dùng
-        $stmt = $pdo->prepare("SELECT id, name, password FROM users WHERE name = :username OR email = :username");
+        $stmt = $pdo->prepare("SELECT id, name, password, profile_picture FROM users WHERE name = :username OR email = :username");
         $stmt->bindParam(':username', $username);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
+        
         if ($user) {
             if (password_verify($password, $user['password'])) { // Sử dụng password_verify để xác minh mật khẩu đã hashed
                 // Lưu thông tin người dùng vào session
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['name'];
+                $_SESSION['profile_picture'] = $user['profile_picture'] ?? '';
                 header('Location: ../Pages/index.php'); // Chuyển hướng đến trang chào mừng hoặc trang chính sau khi đăng nhập thành công
                 exit();
             } else {

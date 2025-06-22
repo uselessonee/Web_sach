@@ -54,7 +54,12 @@ $username = $_SESSION['username'] ?? 'Khách';
 
 <div class="icons">
             <a href="../Pages/login.php" class="user">
-                <img src="../images/logo/user.png" alt="user">
+                <?php if (!empty($_SESSION['profile_picture'])): ?>
+                    <img src="../Admin/<?php echo htmlspecialchars($_SESSION['profile_picture']); ?>" alt="Ảnh bìa" 
+                    >
+                    <?php else: ?>
+                    <img src="../images/logo/user.png" alt="Không Ảnh">
+                    <?php endif; ?>
             </a>
             <div class="dropdown-content">
                 <?php if (isset($_SESSION['user_id'])): ?>

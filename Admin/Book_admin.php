@@ -28,7 +28,8 @@ try {
             cover_image_url TEXT, -- Vẫn giữ tên cột này nhưng sẽ lưu đường dẫn tệp
             summary TEXT,
             published_date TEXT,
-            read_link TEXT UNIQUE
+            read_link TEXT UNIQUE,
+            genre TEXT
         );
     ";
     $pdo->exec($createTableSQL);

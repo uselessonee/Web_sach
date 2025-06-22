@@ -64,7 +64,7 @@
             foreach ($books as $book) {
                 ?>
                 <div class="book-item">
-                    <a href="<?php echo htmlspecialchars($book['read_link']); ?>">
+                    <a href="../Pages/Read.php?id=<?php echo htmlspecialchars($book['id']); ?>">
                                 <?php if (!empty($book['cover_image_url'])): ?>
                           <img src="../Admin/<?php echo htmlspecialchars($book['cover_image_url']); ?>" alt="Ảnh bìa" >
                             <?php else: ?>

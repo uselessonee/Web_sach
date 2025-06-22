@@ -124,7 +124,6 @@
                             <div class="book-title">Tác phẩm: <?php echo htmlspecialchars($book['title']); ?></div>
                             <div class="book-title">Tác giả: <?php echo htmlspecialchars($book['author']); ?></div>
                             <div class="book-title">Năm xuất bản: <?php echo htmlspecialchars($book['published_date']); ?></div>
-                            <div class="book-title">Thể loại: <?php echo htmlspecialchars($book['genre']); ?></div>
                             </div>
                     </a>
                 </div>
