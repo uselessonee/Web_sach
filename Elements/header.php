@@ -37,7 +37,6 @@ $username = $_SESSION['username'] ?? 'Khách';
                 </tr>
                 <tr>
                     <td><a href="../Pages/genre.php?title=cotich">Cổ tích</a></td>
-                    <td><a href="../Pages/genre.php?title=truyen3d">Truyện 3D</a></td>
                     <td><a href="../Pages/genre.php?title=kinddi">Kinh dị</a></td>
                 </tr>
                 <tr>
