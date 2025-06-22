@@ -54,7 +54,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Book Genres</title>
-    <link rel="icon" href="../images/book.png" type="image/x-icon">
+    <link rel="icon" href="../images/logo/book.png" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;

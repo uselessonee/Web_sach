@@ -8,7 +8,7 @@
   <title> Đọc sách online</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
  <link rel="stylesheet" href="../../css/The_loai.css">
- <link rel="icon" href="../images/book.png" type="image/x-icon">
+ <link rel="icon" href="../images/logo/book.png" type="image/x-icon">
 
 </head>
  <header><?php include '../Elements/header.php'; ?></header>
@@ -72,9 +72,9 @@
                                         <?php endif; ?>
               
                     </a>
-                    <a href="<?php echo htmlspecialchars($book['read_link']); ?>">
-                        <div class="book-info">
-                            <div class="book-title">Tác phẩm: <?php echo htmlspecialchars($book['title']); ?></div>
+                    <a href="../Pages/Read.php?id=<?php echo htmlspecialchars($book['id']); ?>">
+                        <div class="book-info" style="text-decoration: none; color: #000;">
+                            <h3 style="color:black">Tác phẩm: <?php echo htmlspecialchars($book['title']); ?></h3>
                             <div class="book-title">Tác giả: <?php echo htmlspecialchars($book['author']); ?></div>
                             <div class="book-title">Năm xuất bản: <?php echo htmlspecialchars($book['published_date']); ?></div>
                             <div class="book-title">Thể loại: <?php echo htmlspecialchars($book['genre']); ?></div>
