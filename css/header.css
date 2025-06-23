@@ -122,20 +122,15 @@ header .logo {
 /* USER */
 .icons {
     position: relative;
-    /* Needed for positioning the dropdown-content */
     display: inline-block;
 }
 
 .user img {
     width: 3rem;
     height: 3rem;
-    /* Add this line to set height equal to width */
     border-radius: 50%;
-    /* Add this line to make it round */
     object-fit: cover;
-    /* Add this to ensure the image covers the circular area without distortion */
     border: 2px solid #e5e7eb;
-    /* Optional: adds a border like your thumbnail class */
 }
 
 .dropdown-content {
@@ -146,11 +141,8 @@ header .logo {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    /* Ensures it appears above other content */
     top: 100%;
-    /* Positions it below the .user icon */
     left: 0;
-    /* Aligns it with the left of the .user icon */
 }
 
 .dropdown-content a {
@@ -165,7 +157,7 @@ header .logo {
     background-color: #f1f1f1;
 }
 
-/* Show the dropdown menu when the parent .icons has the .active class */
+/* DROP DOWWNNNNNNNN */
 .icons.active .dropdown-content {
     display: block;
 }
